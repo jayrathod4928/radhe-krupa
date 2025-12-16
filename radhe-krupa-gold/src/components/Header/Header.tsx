@@ -29,13 +29,13 @@ export default function Header() {
         <>
             <header className={styles.header}>
                 {/* ===== TOP BAR ===== */}
-                <div
-                    className={`${styles.topBar} ${
-                        scrolled ? styles.hideTopBar : ""
-                    }`}
-                >
+                <div className={`${styles.topBar} ${scrolled ? styles.hideTopBar : ""}`}>
                     <div className={styles.leftIcons}>
-                        <button className={styles.menuToggle}>
+                        <button
+                            className={styles.menuToggle}
+                            onClick={() => setMenuOpen(!menuOpen)}
+                            aria-label="Toggle menu"
+                        >
                             <MenuIcon />
                         </button>
 
@@ -56,11 +56,7 @@ export default function Header() {
                 </div>
 
                 {/* ===== DESKTOP NAV ===== */}
-                <nav
-                    className={`${styles.desktopNav} ${
-                        scrolled ? styles.desktopNavScrolled : ""
-                    }`}
-                >
+                <nav className={`${styles.desktopNav} ${scrolled ? styles.desktopNavScrolled : ""}`}>
                     <a className={styles.active} href="#">Home</a>
 
                     <div className={styles.dropdown}>
@@ -70,7 +66,6 @@ export default function Header() {
                         <div className={styles.dropdownContent}>
                             <a href="#">Large Gold Coin</a>
                             <a href="#">Extra-Large Slim Gold Coin</a>
-                            <a href="#">Gold Frames</a>
                             <a href="#">All Items</a>
                         </div>
                     </div>
@@ -102,26 +97,21 @@ export default function Header() {
 
                 <a href="#">Home</a>
 
-                {/* Side nav Products with slide-in submenu */}
-                <div>
-                    <a
-                        href="#"
-                        onClick={(e) => {
-                            e.preventDefault(); // prevent navigation
-                            setProductsOpen(!productsOpen);
-                        }}
+                {/* ===== Mobile Products submenu ===== */}
+                <div className={styles.sideNavItem}>
+                    <button
+                        style={{color: "#D4AF37"}}
+                        onClick={() => setProductsOpen(!productsOpen)}
                     >
-                        Products <span className={styles.arrow}>▶</span>
-                    </a>
+                        Products <span className={styles.arrow}>{productsOpen ? "▼" : "▶"}</span>
+                    </button>
 
                     <div className={`${styles.sideDropdown} ${productsOpen ? styles.open : ""}`}>
                         <a href="#">Large Gold Coin</a>
                         <a href="#">Extra-Large Slim Gold Coin</a>
-                        <a href="#">Gold Frames</a>
                         <a href="#">All Items</a>
                     </div>
                 </div>
-
 
                 <a href="#">Bulk Orders</a>
                 <a href="#">Jewellery Store Tie-ups</a>
