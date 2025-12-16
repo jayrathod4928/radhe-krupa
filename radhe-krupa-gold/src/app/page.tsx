@@ -1,4 +1,4 @@
-// page.tsx (Final Code with OccasionGrid)
+// page.tsx (Final Code with LandingSection)
 
 import Link from "next/link";
 import Image from "next/image";
@@ -6,15 +6,14 @@ import Header from "@/components/Header/Header";
 import Slider from "@/components/Slider/Slider";
 import CoinCard from "@/components/CoinCard/CoinCard";
 import ProductVariantSection from "@/components/ProductVariantCard/ProductVariantSection";
-// 🛑 NEW: Import the Occasions Grid component
 import OccasionGrid from "@/components/OccasionCard/OccasionGrid/OccasionGrid";
-// 🛑 NEW: Import the Occasions Mock Data
+
+// 🛑 NEW: Import the LandingSection component
+import LandingSection from "@/components/ProductCard/LandingSection";
+
+// Mock Data Imports
 import { OCCASION_MOCK_DATA } from "@/components/OccasionCard/mock";
-
-// CoinCard mock
 import { MOCK_PRODUCTS as COIN_PRODUCTS } from "@/components/CoinCard/mock";
-
-// ProductVariantCard mock (gm-based variants)
 import { MOCK_PRODUCTS as VARIANT_PRODUCTS } from "@/components/ProductVariantCard/Mock";
 
 import styles from "./page.module.scss";
@@ -91,6 +90,10 @@ export default function Page() {
                        itself doesn't include one, but typically it would. */}
                     <OccasionGrid data={OCCASION_MOCK_DATA} />
                 </section>
+
+                {/* 🛑 NEW SECTION: High Finish Product Banner (LandingSection) */}
+                <LandingSection />
+
             </main>
         </>
     );
