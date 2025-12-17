@@ -21,6 +21,7 @@ import slide1 from "@/components/Images/Slide-4.jpg";
 import slide2 from "@/components/Images/Slide-5.jpg";
 import Hero from "@/components/Hero/Hero";
 import LuxuryGoldSection from "@/components/LuxuryGoldSection/LuxuryGoldSection";
+import WhyUsSection from "@/components/WhyUsSection/WhyUsSection";
 
 export default function Page() {
     /* ===============================
@@ -101,7 +102,23 @@ export default function Page() {
                        itself doesn't include one, but typically it would. */}
                     <LuxuryGoldSection />
                 </section>
-                <br/>
+
+                <section>
+                    {/* Optionally, you can add a title here if the OccasionGrid component
+                       itself doesn't include one, but typically it would. */}
+                    <WhyUsSection />
+                </section>
+
+                <section>
+                    {/* ===== PRODUCT VARIANT CARD SECTION (REUSABLE) ===== */}
+                    <ProductVariantSection
+                        title="Large Solid Gold Coins"
+                        subtitle="Make a Statement with Solid Gold"
+                        products={VARIANT_PRODUCTS}
+                        visibleLimit={8}
+                        viewMoreLink="/collections/24k-extra-large-pure-gold-coins"
+                    />
+                </section>
             </main>
         </>
     );
