@@ -20,6 +20,7 @@ import styles from "./page.module.scss";
 import slide1 from "@/components/Images/Slide-4.jpg";
 import slide2 from "@/components/Images/Slide-5.jpg";
 import Hero from "@/components/Hero/Hero";
+import LuxuryGoldSection from "@/components/LuxuryGoldSection/LuxuryGoldSection";
 
 export default function Page() {
     /* ===============================
@@ -91,7 +92,16 @@ export default function Page() {
                 </section>
 
                 {/* 🛑 NEW SECTION: High Finish Product Banner (HighFinishSection) */}
+                <section className={"mb-5"}>
                 <Hero />
+                </section>
+
+                <section>
+                    {/* Optionally, you can add a title here if the OccasionGrid component
+                       itself doesn't include one, but typically it would. */}
+                    <LuxuryGoldSection />
+                </section>
+                <br/>
             </main>
         </>
     );
