@@ -15,13 +15,17 @@ export default function Header() {
     const [productsOpen, setProductsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
-    // ✅ SCROLL LISTENER
+    // ✅ SCROLL LISTENER (Optimized)
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 80);
+            if (typeof window !== "undefined") {
+                // Check if user scrolled more than 50px
+                setScrolled(window.scrollY > 50);
+            }
         };
 
         window.addEventListener("scroll", handleScroll);
+        // Clean up event listener
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -45,7 +49,14 @@ export default function Header() {
                     </div>
 
                     <div className={styles.logo}>
-                        <Image src={Logo} alt="Logo" width={60} height={60} />
+                        {/* Wrapped in Next/Link or A tag usually, here using div for layout */}
+                        <Image
+                            src={Logo}
+                            alt="Radhe Krupa"
+                            width={60}
+                            height={60}
+                            style={{ objectFit: 'contain' }}
+                        />
                         <span>Radhe Krupa</span>
                     </div>
 
@@ -100,7 +111,6 @@ export default function Header() {
                 {/* ===== Mobile Products submenu ===== */}
                 <div className={styles.sideNavItem}>
                     <button
-                        style={{color: "#D4AF37"}}
                         onClick={() => setProductsOpen(!productsOpen)}
                     >
                         Products <span className={styles.arrow}>{productsOpen ? "▼" : "▶"}</span>
