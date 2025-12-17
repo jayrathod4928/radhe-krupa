@@ -8,8 +8,6 @@ import CoinCard from "@/components/CoinCard/CoinCard";
 import ProductVariantSection from "@/components/ProductVariantCard/ProductVariantSection";
 import OccasionGrid from "@/components/OccasionCard/OccasionGrid/OccasionGrid";
 
-// 🛑 NEW: Import the LandingSection component
-import LandingSection from "@/components/ProductCard/LandingSection";
 
 // Mock Data Imports
 import { OCCASION_MOCK_DATA } from "@/components/OccasionCard/mock";
@@ -21,6 +19,7 @@ import styles from "./page.module.scss";
 // Slider images
 import slide1 from "@/components/Images/Slide-4.jpg";
 import slide2 from "@/components/Images/Slide-5.jpg";
+import Hero from "@/components/Hero/Hero";
 
 export default function Page() {
     /* ===============================
@@ -91,9 +90,8 @@ export default function Page() {
                     <OccasionGrid data={OCCASION_MOCK_DATA} />
                 </section>
 
-                {/* 🛑 NEW SECTION: High Finish Product Banner (LandingSection) */}
-                <LandingSection />
-
+                {/* 🛑 NEW SECTION: High Finish Product Banner (HighFinishSection) */}
+                <Hero />
             </main>
         </>
     );
