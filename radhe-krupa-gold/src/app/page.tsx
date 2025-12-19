@@ -112,7 +112,7 @@ export default function Page() {
                 <section>
                     {/* ===== PRODUCT VARIANT CARD SECTION (REUSABLE) ===== */}
                     <ProductVariantSection
-                        title="Large Solid Gold Coins"
+                        title=""
                         subtitle="Make a Statement with Solid Gold"
                         products={VARIANT_PRODUCTS}
                         visibleLimit={8}
