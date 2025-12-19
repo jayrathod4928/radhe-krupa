@@ -3,8 +3,7 @@ $gold-hover: #bfa165;
 $text-dark: #1a1a1a;
 
 .coinSection {
-  padding: 4rem 2rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 1rem 4rem;
   max-width: 1400px; // Limits max width on very large screens
   margin: 0 auto;
 }
@@ -29,7 +28,7 @@ $text-dark: #1a1a1a;
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); // Mobile: 1 per row
-  gap: 2rem;
+  gap: 1rem;
   margin-bottom: 3rem; // Space between grid and button
 
   // Tablet: 3 per row
