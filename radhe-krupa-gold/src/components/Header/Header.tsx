@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import styles from "./Header.module.scss";
 
@@ -15,10 +16,11 @@ import UserIcon from "@/components/Icons/UserIcon";
 import CartIcon from "@/components/Icons/CartIcon";
 
 export default function Header() {
+    const pathname = usePathname();
+
     const [menuOpen, setMenuOpen] = useState(false);
     const [productsOpen, setProductsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [activeLink, setActiveLink] = useState("/");
 
     // ✅ Scroll listener
     useEffect(() => {
@@ -68,29 +70,45 @@ export default function Header() {
                     </div>
                 </div>
 
-                {/* ===== DESKTOP NAV ===== */}
-                <nav className={`${styles.desktopNav} ${scrolled ? styles.desktopNavScrolled : ""}`}>
+                {/* ===== DESKTOP / TABLET NAV ===== */}
+                <nav
+                    className={`${styles.desktopNav} ${
+                        scrolled ? styles.desktopNavScrolled : ""
+                    }`}
+                >
                     <Link
                         href="/"
-                        className={activeLink === "/" ? styles.active : ""}
-                        onClick={() => setActiveLink("/")}
+                        className={pathname === "/" ? styles.active : ""}
                     >
                         Home
                     </Link>
 
-                    <div className={styles.dropdown}>
-                        <span>
-                            Products <span className={styles.arrow}>▼</span>
-                        </span>
+                    <div
+                        className={`${styles.dropdown} ${
+                            pathname.startsWith("/products") ? styles.active : ""
+                        }`}
+                    >
+            <span>
+              Products <span className={styles.arrow}>▼</span>
+            </span>
 
                         <div className={styles.dropdownContent}>
-                            <Link href="#" onClick={() => setActiveLink("product-1")}>
+                            <Link
+                                href="#"
+                                className={pathname === "/products/large-gold-coin" ? styles.active : ""}
+                            >
                                 Large Gold Coin
                             </Link>
-                            <Link href="#" onClick={() => setActiveLink("product-2")}>
+                            <Link
+                                href="#"
+                                className={pathname === "/products/extra-large-slim-gold-coin" ? styles.active : ""}
+                            >
                                 Extra-Large Slim Gold Coin
                             </Link>
-                            <Link href="#" onClick={() => setActiveLink("product-3")}>
+                            <Link
+                                href="#"
+                                className={pathname === "/products" ? styles.active : ""}
+                            >
                                 All Items
                             </Link>
                         </div>
@@ -98,32 +116,28 @@ export default function Header() {
 
                     <Link
                         href="/bulk-orders"
-                        className={activeLink === "/bulk-orders" ? styles.active : ""}
-                        onClick={() => setActiveLink("/bulk-orders")}
+                        className={pathname === "/bulk-orders" ? styles.active : ""}
                     >
                         Bulk Orders
                     </Link>
 
                     <Link
-                        href="#"
-                        className={activeLink === "tieups" ? styles.active : ""}
-                        onClick={() => setActiveLink("tieups")}
+                        href="/jewellery-store-tie-ups"
+                        className={pathname === "/jewellery-store-tie-ups" ? styles.active : ""}
                     >
                         Jewellery Store Tie-ups
                     </Link>
 
                     <Link
-                        href="#"
-                        className={activeLink === "about" ? styles.active : ""}
-                        onClick={() => setActiveLink("about")}
+                        href="/about-us"
+                        className={pathname === "/about-us" ? styles.active : ""}
                     >
                         About Us
                     </Link>
 
                     <Link
-                        href="#"
-                        className={activeLink === "contact" ? styles.active : ""}
-                        onClick={() => setActiveLink("contact")}
+                        href="/contact"
+                        className={pathname === "/contact" ? styles.active : ""}
                     >
                         Contact Us
                     </Link>
@@ -148,7 +162,11 @@ export default function Header() {
                     <CloseIcon width={24} height={24} />
                 </button>
 
-                <Link href="/" onClick={() => setMenuOpen(false)}>
+                <Link
+                    href="/"
+                    className={pathname === "/" ? styles.active : ""}
+                    onClick={() => setMenuOpen(false)}
+                >
                     Home
                 </Link>
 
@@ -156,33 +174,68 @@ export default function Header() {
                     <button onClick={() => setProductsOpen(!productsOpen)}>
                         Products{" "}
                         <span className={styles.arrow}>
-                            {productsOpen ? "▼" : "▶"}
-                        </span>
+              {productsOpen ? "▼" : "▶"}
+            </span>
                     </button>
 
-                    <div className={`${styles.sideDropdown} ${productsOpen ? styles.open : ""}`}>
-                        <Link href="#" onClick={() => setMenuOpen(false)}>
+                    <div
+                        className={`${styles.sideDropdown} ${
+                            productsOpen ? styles.open : ""
+                        }`}
+                    >
+                        <Link
+                            href="#"
+                            className={pathname === "/products/large-gold-coin" ? styles.active : ""}
+                            onClick={() => setMenuOpen(false)}
+                        >
                             Large Gold Coin
                         </Link>
-                        <Link href="#" onClick={() => setMenuOpen(false)}>
+                        <Link
+                            href="#"
+                            className={pathname === "/products/extra-large-slim-gold-coin" ? styles.active : ""}
+                            onClick={() => setMenuOpen(false)}
+                        >
                             Extra-Large Slim Gold Coin
                         </Link>
-                        <Link href="#" onClick={() => setMenuOpen(false)}>
+                        <Link
+                            href="#"
+                            className={pathname === "/products" ? styles.active : ""}
+                            onClick={() => setMenuOpen(false)}
+                        >
                             All Items
                         </Link>
                     </div>
                 </div>
 
-                <Link href="/bulk-orders" onClick={() => setMenuOpen(false)}>
+                <Link
+                    href="/bulk-orders"
+                    className={pathname === "/bulk-orders" ? styles.active : ""}
+                    onClick={() => setMenuOpen(false)}
+                >
                     Bulk Orders
                 </Link>
-                <Link href="#" onClick={() => setMenuOpen(false)}>
+
+                <Link
+                    href="/jewellery-store-tie-ups"
+                    className={pathname === "/jewellery-store-tie-ups" ? styles.active : ""}
+                    onClick={() => setMenuOpen(false)}
+                >
                     Jewellery Store Tie-ups
                 </Link>
-                <Link href="#" onClick={() => setMenuOpen(false)}>
+
+                <Link
+                    href="/about-us"
+                    className={pathname === "/about" ? styles.active : ""}
+                    onClick={() => setMenuOpen(false)}
+                >
                     About Us
                 </Link>
-                <Link href="#" onClick={() => setMenuOpen(false)}>
+
+                <Link
+                    href="/contact"
+                    className={pathname === "/contact" ? styles.active : ""}
+                    onClick={() => setMenuOpen(false)}
+                >
                     Contact Us
                 </Link>
             </nav>
