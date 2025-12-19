@@ -113,7 +113,7 @@ export default function Page() {
                     {/* ===== PRODUCT VARIANT CARD SECTION (REUSABLE) ===== */}
                     <ProductVariantSection
                         title=""
-                        subtitle="Make a Statement with Solid Gold"
+                        subtitle=""
                         products={VARIANT_PRODUCTS}
                         visibleLimit={8}
                         viewMoreLink="/collections/24k-extra-large-pure-gold-coins"
