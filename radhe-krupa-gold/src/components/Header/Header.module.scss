@@ -1,10 +1,14 @@
-.header {
-  background-color: #561211;
-  color: #D4AF37;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* ================= ROOT ================= */
+:root {
+  --primary-bg: #561211;
+  --gold: #d4af37;
+}
+
+/* ================= TOP HEADER (SCROLLS AWAY) ================= */
+.topHeader {
   width: 100%;
+  background-color: var(--primary-bg);
+  color: var(--gold);
 }
 
 /* ================= TOP BAR ================= */
@@ -12,114 +16,107 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding: 1rem 2rem;
   gap: 1rem;
+  padding: 1rem 2rem;
   border-bottom: 1px solid #ffffff;
-  max-height: 96px;
-  opacity: 1;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hideTopBar {
-  @media (min-width: 1025px) {
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    opacity: 0;
-    border-bottom-color: transparent;
-    margin: 0;
-  }
-}
-
-/* ================= ICONS & LOGO ================= */
+/* ================= ICON GROUPS ================= */
 .leftIcons,
 .rightIcons {
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 1rem;
 }
 
+/* ================= LOGO ================= */
 .logo {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
-.logo img {
-  object-fit: contain;
+.logo span {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
-.iconBtn {
+/* ================= BUTTONS & ICONS ================= */
+.iconBtn,
+.menuToggle {
   background: none;
-  color: #ffffff;
   border: none;
   cursor: pointer;
+  color: #ffffff;
 }
 
 .menuToggle {
   display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
 }
 
-/* ================= DESKTOP NAV ================= */
+/* ================= DESKTOP NAV (STICKY) ================= */
 .desktopNav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2.5rem;
-  padding: 1.2rem 0;
-  background-color: #561211;
-  border-bottom: 1px solid transparent;
-  transition: padding 0.3s ease, box-shadow 0.3s ease;
+
+  padding: 1rem 0;
+  background-color: var(--primary-bg);
+  border-bottom: 1px solid #ffffff;
 }
 
-.desktopNavScrolled {
-  padding: 0.8rem 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
+/* ================= NAV LINKS ================= */
 .desktopNav a {
+  color: var(--gold);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
   position: relative;
-  color: #D4AF37;
+  padding-bottom: 0.2rem;
 }
 
-/* ===== ANIMATED UNDERLINE ===== */
+/* ===== Underline Animation ===== */
 .desktopNav a::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -8px;
+  bottom: -6px;
   width: 0;
   height: 2px;
-  background-color: #D4AF37;
+  background-color: var(--gold);
   transform: translateX(-50%);
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Active (click) */
+.desktopNav a:hover::after,
 .desktopNav a.active::after {
   width: 100%;
 }
 
-/* Hover (only when NOT active) */
-.desktopNav a:not(.active):hover::after {
-  width: 100%;
-}
-
-/* ❌ Disable underline for dropdown label */
-.dropdown > span::after {
-  display: none !important;
-}
-
-/* ================= DROPDOWNS ================= */
+/* ================= DROPDOWN ================= */
 .dropdown {
   position: relative;
+  color: #d4af37;
+  font-size: 15.2px;
+}
+
+.dropdown > span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+/* Disable underline for dropdown label */
+.dropdown > span::after {
+  display: none !important;
 }
 
 .dropdownContent {
@@ -127,18 +124,18 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #561211;
+
   min-width: 200px;
-  flex-direction: column;
-  z-index: 1001;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  background-color: var(--primary-bg);
   padding: 0.5rem 0;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  z-index: 1000;
 }
 
 .dropdownContent a {
-  padding: 0.8rem 1rem;
-  color: #D4AF37;
   display: block;
+  padding: 0.8rem 1rem;
 }
 
 .dropdownContent a:hover {
@@ -146,36 +143,40 @@
 }
 
 .dropdown:hover .dropdownContent {
-  display: flex;
+  display: block;
 }
 
 .arrow {
   font-size: 0.7rem;
-  margin-left: 4px;
 }
 
-/* ================= MOBILE SIDE NAV ================= */
+/* ================= MOBILE OVERLAY ================= */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 1001;
 }
 
+/* ================= MOBILE SIDE NAV ================= */
 .sideNav {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
   width: 280px;
+  height: 100vh;
+
+  background-color: var(--primary-bg);
+  color: var(--gold);
+
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
   transform: translateX(-100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1002;
-  background-color: #561211;
 }
 
 .sideNav.open {
@@ -183,18 +184,19 @@
 }
 
 .sideNav a {
+  color: var(--gold);
   text-decoration: none;
-  font-size: 1.1rem;
-  color: #D4AF37;
+  font-size: 15px;
 }
 
+/* ================= SIDE NAV DROPDOWN ================= */
 .sideNavItem button {
   background: none;
   border: none;
-  font-size: 1.1rem;
-  color: #D4AF37;
-  padding: 0;
+  color: var(--gold);
+  font-size: 15px;
   cursor: pointer;
+
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -206,24 +208,25 @@
   gap: 0.8rem;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.4s ease;
   opacity: 0;
   padding-left: 1rem;
-  margin-top: 0;
+
+  transition: all 0.4s ease;
 }
 
 .sideDropdown.open {
-  max-height: 500px;
+  max-height: 400px;
   opacity: 1;
   margin-top: 1rem;
 }
 
+/* ================= CLOSE BUTTON ================= */
 .closeBtn {
-  color: #D4AF37;
-  align-self: flex-end;
   background: none;
   border: none;
+  color: var(--gold);
   cursor: pointer;
+  align-self: flex-end;
   transition: transform 0.3s ease;
 }
 
@@ -235,21 +238,9 @@
 @media (max-width: 1024px) {
   .menuToggle {
     display: block;
-    color: #ffffff;
   }
 
   .desktopNav {
     display: none;
-  }
-
-  .topBar {
-    max-height: 100px !important;
-    opacity: 1 !important;
-    padding: 1rem 2rem !important;
-  }
-
-  .hideTopBar {
-    max-height: 100px !important;
-    opacity: 1 !important;
   }
 }
