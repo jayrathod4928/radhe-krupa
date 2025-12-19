@@ -1,11 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './Hero.module.scss';
+import Image from "next/image";
+import goldCoin from "@/components/Images/Gold-Card.jpg";
+import maroonCard from "@/components/Images/Maroon-Card.jpg";
 
 const products = [
-    { id: 1, name: "GANESH JI", price: "Rs. 1,910.00 - Rs. 139,800.00", img: "https://earthmintgold.com/cdn/shop/files/Untitled_design_1.png?v=1749015953&width=200" }, // Replace with actual coin imgs
-    { id: 2, name: "HAWA MAHAL", price: "Rs. 3,345.00 - Rs. 4,775.00", img: "https://earthmintgold.com/cdn/shop/files/Untitled_design_1.png?v=1749015953&width=200" },
-    { id: 3, name: "PEACOCK", price: "Rs. 29,180.00 - Rs. 139,800.00", img: "https://earthmintgold.com/cdn/shop/files/Untitled_design_1.png?v=1749015953&width=200" },
+    { id: 1, name: "GANESH JI", price: "Rs. 1,910.00 - Rs. 139,800.00", img: maroonCard }, // Replace with actual coin imgs
+    { id: 2, name: "HAWA MAHAL", price: "Rs. 3,345.00 - Rs. 4,775.00", img: goldCoin },
+    { id: 3, name: "PEACOCK", price: "Rs. 29,180.00 - Rs. 139,800.00", img: maroonCard },
 ];
 
 const Hero: React.FC = () => {
@@ -39,7 +42,7 @@ const Hero: React.FC = () => {
                                 </svg>
                             </div>
                         </div>
-                        <img src={item.img} alt={item.name} className={styles.prodImg} />
+                        <Image src={item.img} alt={item.name} className={styles.prodImg} />
                     </div>
                 ))}
             </aside>

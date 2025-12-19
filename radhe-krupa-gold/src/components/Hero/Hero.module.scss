@@ -51,7 +51,7 @@
 
     .viewBtn {
       display: inline-block;
-      background-color: #d4af37;
+      background-color: #561211;
       color: white;
       padding: 12px 28px;
       border-radius: 4px;
@@ -60,7 +60,7 @@
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #b8962e; // Simple color change for the button only
+        background-color: maroon; // Simple color change for the button only
       }
     }
   }
@@ -113,7 +113,7 @@
       .cartIcon {
         width: 35px;
         height: 35px;
-        background: #d4af37;
+        background: #561211;
         border-radius: 50%;
         display: flex;
         align-items: center;
