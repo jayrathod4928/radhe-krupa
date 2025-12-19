@@ -18,6 +18,7 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [productsOpen, setProductsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [activeLink, setActiveLink] = useState("/");
 
     // ✅ Scroll listener
     useEffect(() => {
@@ -69,23 +70,63 @@ export default function Header() {
 
                 {/* ===== DESKTOP NAV ===== */}
                 <nav className={`${styles.desktopNav} ${scrolled ? styles.desktopNavScrolled : ""}`}>
-                    <Link href="/" className={styles.active}>Home</Link>
+                    <Link
+                        href="/"
+                        className={activeLink === "/" ? styles.active : ""}
+                        onClick={() => setActiveLink("/")}
+                    >
+                        Home
+                    </Link>
 
                     <div className={styles.dropdown}>
                         <span>
                             Products <span className={styles.arrow}>▼</span>
                         </span>
+
                         <div className={styles.dropdownContent}>
-                            <Link href="#">Large Gold Coin</Link>
-                            <Link href="#">Extra-Large Slim Gold Coin</Link>
-                            <Link href="#">All Items</Link>
+                            <Link href="#" onClick={() => setActiveLink("product-1")}>
+                                Large Gold Coin
+                            </Link>
+                            <Link href="#" onClick={() => setActiveLink("product-2")}>
+                                Extra-Large Slim Gold Coin
+                            </Link>
+                            <Link href="#" onClick={() => setActiveLink("product-3")}>
+                                All Items
+                            </Link>
                         </div>
                     </div>
 
-                    <Link href="/bulk-orders">Bulk Orders</Link>
-                    <Link href="#">Jewellery Store Tie-ups</Link>
-                    <Link href="#">About Us</Link>
-                    <Link href="#">Contact Us</Link>
+                    <Link
+                        href="/bulk-orders"
+                        className={activeLink === "/bulk-orders" ? styles.active : ""}
+                        onClick={() => setActiveLink("/bulk-orders")}
+                    >
+                        Bulk Orders
+                    </Link>
+
+                    <Link
+                        href="#"
+                        className={activeLink === "tieups" ? styles.active : ""}
+                        onClick={() => setActiveLink("tieups")}
+                    >
+                        Jewellery Store Tie-ups
+                    </Link>
+
+                    <Link
+                        href="#"
+                        className={activeLink === "about" ? styles.active : ""}
+                        onClick={() => setActiveLink("about")}
+                    >
+                        About Us
+                    </Link>
+
+                    <Link
+                        href="#"
+                        className={activeLink === "contact" ? styles.active : ""}
+                        onClick={() => setActiveLink("contact")}
+                    >
+                        Contact Us
+                    </Link>
                 </nav>
             </header>
 
@@ -107,9 +148,10 @@ export default function Header() {
                     <CloseIcon width={24} height={24} />
                 </button>
 
-                <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+                <Link href="/" onClick={() => setMenuOpen(false)}>
+                    Home
+                </Link>
 
-                {/* ===== Mobile Products submenu ===== */}
                 <div className={styles.sideNavItem}>
                     <button onClick={() => setProductsOpen(!productsOpen)}>
                         Products{" "}
