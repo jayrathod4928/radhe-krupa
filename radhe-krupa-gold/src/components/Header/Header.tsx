@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 import styles from "./Header.module.scss";
 
 import Logo from "@/components/Images/Radhe-Krupa-Gold.png";
-
 import MenuIcon from "@/components/Icons/MenuIcon";
 import CloseIcon from "@/components/Icons/CloseIcon";
 import SearchIcon from "@/components/Icons/SearchIcon";
@@ -20,23 +19,12 @@ export default function Header() {
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [productsOpen, setProductsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-
-    // ✅ Scroll listener
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     return (
         <>
-            <header className={styles.header}>
-                {/* ===== TOP BAR ===== */}
-                <div className={`${styles.topBar} ${scrolled ? styles.hideTopBar : ""}`}>
+            {/* ================= TOP BAR (SCROLLS AWAY) ================= */}
+            <header className={styles.topHeader}>
+                <div className={styles.topBar}>
                     <div className={styles.leftIcons}>
                         <button
                             className={styles.menuToggle}
@@ -53,13 +41,7 @@ export default function Header() {
 
                     <div className={styles.logo}>
                         <Link href="/">
-                            <Image
-                                src={Logo}
-                                alt="Radhe Krupa"
-                                width={60}
-                                height={60}
-                                priority
-                            />
+                            <Image src={Logo} alt="Radhe Krupa" width={60} height={60} />
                         </Link>
                         <span>Radhe Krupa</span>
                     </div>
@@ -69,113 +51,82 @@ export default function Header() {
                         <CartIcon width={20} height={20} />
                     </div>
                 </div>
-
-                {/* ===== DESKTOP / TABLET NAV ===== */}
-                <nav
-                    className={`${styles.desktopNav} ${
-                        scrolled ? styles.desktopNavScrolled : ""
-                    }`}
-                >
-                    <Link
-                        href="/"
-                        className={pathname === "/" ? styles.active : ""}
-                    >
-                        Home
-                    </Link>
-
-                    <div
-                        className={`${styles.dropdown} ${
-                            pathname.startsWith("/products") ? styles.active : ""
-                        }`}
-                    >
-            <span>
-              Products <span className={styles.arrow}>▼</span>
-            </span>
-
-                        <div className={styles.dropdownContent}>
-                            <Link
-                                href="#"
-                                className={pathname === "/products/large-gold-coin" ? styles.active : ""}
-                            >
-                                Large Gold Coin
-                            </Link>
-                            <Link
-                                href="#"
-                                className={pathname === "/products/extra-large-slim-gold-coin" ? styles.active : ""}
-                            >
-                                Extra-Large Slim Gold Coin
-                            </Link>
-                            <Link
-                                href="#"
-                                className={pathname === "/products" ? styles.active : ""}
-                            >
-                                All Items
-                            </Link>
-                        </div>
-                    </div>
-
-                    <Link
-                        href="/bulk-orders"
-                        className={pathname === "/bulk-orders" ? styles.active : ""}
-                    >
-                        Bulk Orders
-                    </Link>
-
-                    <Link
-                        href="/jewellery-store-tie-ups"
-                        className={pathname === "/jewellery-store-tie-ups" ? styles.active : ""}
-                    >
-                        Jewellery Store Tie-ups
-                    </Link>
-
-                    <Link
-                        href="/about-us"
-                        className={pathname === "/about-us" ? styles.active : ""}
-                    >
-                        About Us
-                    </Link>
-
-                    <Link
-                        href="/contact"
-                        className={pathname === "/contact" ? styles.active : ""}
-                    >
-                        Contact Us
-                    </Link>
-                </nav>
             </header>
 
-            {/* ===== OVERLAY ===== */}
-            {menuOpen && (
+            {/* ================= DESKTOP NAV (STICKY) ================= */}
+            <nav className={styles.desktopNav}>
+                <Link href="/" className={pathname === "/" ? styles.active : ""}>
+                    Home
+                </Link>
+
                 <div
-                    className={styles.overlay}
-                    onClick={() => setMenuOpen(false)}
-                />
+                    className={`${styles.dropdown} ${
+                        pathname.startsWith("/products") ? styles.active : ""
+                    }`}
+                >
+          <span>
+            Products <span className={styles.arrow}>▼</span>
+          </span>
+
+                    <div className={styles.dropdownContent}>
+                        <Link href="#">Large Gold Coin</Link>
+                        <Link href="#">Extra-Large Slim Gold Coin</Link>
+                        <Link href="/products">All Items</Link>
+                    </div>
+                </div>
+
+                <Link
+                    href="/bulk-orders"
+                    className={pathname === "/bulk-orders" ? styles.active : ""}
+                >
+                    Bulk Orders
+                </Link>
+
+                <Link
+                    href="/jewellery-store-tie-ups"
+                    className={
+                        pathname === "/jewellery-store-tie-ups" ? styles.active : ""
+                    }
+                >
+                    Jewellery Store Tie-ups
+                </Link>
+
+                <Link
+                    href="/about-us"
+                    className={pathname === "/about-us" ? styles.active : ""}
+                >
+                    About Us
+                </Link>
+
+                <Link
+                    href="/contact"
+                    className={pathname === "/contact" ? styles.active : ""}
+                >
+                    Contact Us
+                </Link>
+            </nav>
+
+            {/* ================= MOBILE OVERLAY ================= */}
+            {menuOpen && (
+                <div className={styles.overlay} onClick={() => setMenuOpen(false)} />
             )}
 
-            {/* ===== MOBILE SIDE NAV ===== */}
+            {/* ================= MOBILE SIDE NAV ================= */}
             <nav className={`${styles.sideNav} ${menuOpen ? styles.open : ""}`}>
                 <button
                     className={styles.closeBtn}
                     onClick={() => setMenuOpen(false)}
-                    aria-label="Close menu"
                 >
                     <CloseIcon width={24} height={24} />
                 </button>
 
-                <Link
-                    href="/"
-                    className={pathname === "/" ? styles.active : ""}
-                    onClick={() => setMenuOpen(false)}
-                >
+                <Link href="/" onClick={() => setMenuOpen(false)}>
                     Home
                 </Link>
 
                 <div className={styles.sideNavItem}>
                     <button onClick={() => setProductsOpen(!productsOpen)}>
-                        Products{" "}
-                        <span className={styles.arrow}>
-              {productsOpen ? "▼" : "▶"}
-            </span>
+                        Products <span>{productsOpen ? "▼" : "▶"}</span>
                     </button>
 
                     <div
@@ -183,27 +134,9 @@ export default function Header() {
                             productsOpen ? styles.open : ""
                         }`}
                     >
-                        <Link
-                            href="#"
-                            className={pathname === "/products/large-gold-coin" ? styles.active : ""}
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            Large Gold Coin
-                        </Link>
-                        <Link
-                            href="#"
-                            className={pathname === "/products/extra-large-slim-gold-coin" ? styles.active : ""}
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            Extra-Large Slim Gold Coin
-                        </Link>
-                        <Link
-                            href="#"
-                            className={pathname === "/products" ? styles.active : ""}
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            All Items
-                        </Link>
+                        <Link href="#">Large Gold Coin</Link>
+                        <Link href="#">Extra-Large Slim Gold Coin</Link>
+                        <Link href="/products">All Items</Link>
                     </div>
                 </div>
 
