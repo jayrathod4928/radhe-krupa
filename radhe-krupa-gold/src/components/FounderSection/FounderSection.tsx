@@ -26,13 +26,13 @@ const FounderSection: React.FC = () => {
 
                 <p>
                     Radhe Krupa brings over 13 years of expertise in the jewelry industry,
-                    with a distinguished career that began at Mehta Art Jewellers. As
+                    with a distinguished career that began at Shah Art Jewellers. As
                     Director, he led the business to new heights, specializing in the
                     trading and manufacturing of premium Kolkata Gold Jewellery.
                 </p>
 
                 <p>
-                    Chirag founded Sumeru Gold, marking a significant milestone in his
+                    Gaurang founded Sumeru Gold, marking a significant milestone in his
                     professional journey. Radhe Krupa is a testament to his vision—to blend
                     heritage with innovation and deliver gold products that are as
                     trustworthy as they are beautiful.
