@@ -21,7 +21,7 @@ const FounderSection: React.FC = () => {
 
             {/* Text Section */}
             <div className={styles.textSection}>
-                <h2>Radhe Krupa</h2>
+                <h2>Gaurang Shah</h2>
                 <span className={styles.designation}>Founder, Radhe Krupa</span>
 
                 <p>
