@@ -68,11 +68,11 @@ const Footer: React.FC = () => {
                             POLICIES <ChevronIcon />
                         </h3>
                         <ul className={styles.collapsibleContent}>
-                            <li><a href="/refund">Refund Policy</a></li>
-                            <li><a href="/privacy">Privacy Policy</a></li>
-                            <li><a href="/shipping">Shipping Policy</a></li>
-                            <li><a href="/terms">Terms of Service</a></li>
-                            <li><a href="/faq">FAQ's</a></li>
+                            <li><a href="/policies/refund-policy">Refund Policy</a></li>
+                            <li><a href="/policies/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="/policies/shipping-policy">Shipping Policy</a></li>
+                            <li><a href="/policies/terms-of-service">Terms of Service</a></li>
+                            <li><a href="/policies/faq">FAQ's</a></li>
                         </ul>
                     </div>
 
