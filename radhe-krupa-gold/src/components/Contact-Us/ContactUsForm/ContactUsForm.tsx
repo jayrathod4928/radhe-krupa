@@ -4,8 +4,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Typography, Box } from '@mui/material';
 import styles from './ContactUsForm.module.scss';
-import { AppForm } from "../FormProvider/AppForm";
-import { FieldGroup } from "../FormProvider/FieldGroup";
+import { AppForm } from "@/components/Form/FormProvider/AppForm";
+import { FieldGroup } from "@/components/Form/FormProvider/FieldGroup";
 
 // Custom renderers to apply your CSS Module classes
 const CustomInput = ({ value, onChange, placeholder, error }: any) => (
@@ -90,9 +90,9 @@ const ContactUsForm = () => {
 
     return (
         <div className={styles.orderSection}>
-            <Typography className={styles.formTitle}>
+            <h5 className={styles.formTitle}>
                 Leave a Message For Us
-            </Typography>
+            </h5>
 
             <AppForm
                 form={form}

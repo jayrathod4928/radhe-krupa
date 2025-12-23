@@ -1,7 +1,7 @@
-import BulkHero from "@/components/BulkHero/BulkHero";
-import SampleDesigns from "@/components/SampleDesigns/SampleDesigns";
-import OrderNow from "@/components/OrderNow/OrderNow";
-import OrderNote from "@/components/OrderNote/OrderNote";
+import BulkHero from "@/components/BulkOrders/BulkHero/BulkHero";
+import SampleDesigns from "@/components/BulkOrders/SampleDesigns/SampleDesigns";
+import OrderNow from "@/components/BulkOrders/OrderNow/OrderNow";
+import OrderNote from "@/components/BulkOrders/OrderNote/OrderNote";
 
 export default function BulkOrdersPage() {
     return (

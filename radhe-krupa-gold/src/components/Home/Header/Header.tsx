@@ -40,7 +40,7 @@ export default function Header() {
                     </div>
 
                     <div className={styles.logo}>
-                        <Link href="/">
+                        <Link href="/public">
                             <Image src={Logo} alt="Radhe Krupa" width={60} height={60} />
                         </Link>
                         <span>Radhe Krupa</span>
@@ -61,7 +61,7 @@ export default function Header() {
 
             {/* ================= DESKTOP NAV (STICKY) ================= */}
             <nav className={styles.desktopNav}>
-                <Link href="/" className={pathname === "/" ? styles.active : ""}>
+                <Link href="/public" className={pathname === "/" ? styles.active : ""}>
                     Home
                 </Link>
 
@@ -126,7 +126,7 @@ export default function Header() {
                     <CloseIcon width={24} height={24} />
                 </button>
 
-                <Link href="/" onClick={() => setMenuOpen(false)}>
+                <Link href="/public" onClick={() => setMenuOpen(false)}>
                     Home
                 </Link>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '././RadhekrupaHero.module.scss';
+import styles from './RadhekrupaHero.module.scss';
 import Image from "next/image";
 import LightWeight from "@/components/Images/Light-weight.png";
 
@@ -8,14 +8,14 @@ const RadheKrupaSection: React.FC = () => {
         <div className={styles.wrapper}>
             {/* Left Section */}
             <section className={styles.textSection}>
-                <h1>Earth Mint: Pure Gold</h1>
+                <h1>Radhe Krupa: Pure Gold</h1>
                 <p>
-                    Welcome to Earth Mint, where excellence meets craftsmanship in every gold coin we create.
+                    Welcome to Radhe Krupa, where excellence meets craftsmanship in every gold coin we create.
                 </p>
                 <p>
                     As a premier gold production and development company, we take pride in delivering 24K (999)
                     pure gold coins—minted with precision, authenticity, and unmatched elegance.
-                    Earth Mint provides certified, high-quality gold coins you can trust.
+                    Radhe Krupa provides certified, high-quality gold coins you can trust.
                 </p>
             </section>
 
@@ -23,7 +23,7 @@ const RadheKrupaSection: React.FC = () => {
             <section className={styles.imageSection}>
                 <Image
                     src={LightWeight}
-                    alt="Earth Mint Gold Coins Collection"
+                    alt="Radhe Krupa Gold Coins Collection"
                     width={1400}
                     height={900}
                 />

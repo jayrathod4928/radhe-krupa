@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { AppForm } from "@/components/FormProvider/AppForm";
-import { FieldGroup } from '@/components/FormProvider/FieldGroup';
-import { TextInput } from '@/components/FormProvider/TextInput';
+import { AppForm } from "@/components/Form/FormProvider/AppForm";
+import { FieldGroup } from '@/components/Form/FormProvider/FieldGroup';
+import { TextInput } from '@/components/Form/FormProvider/TextInput';
 import Link from 'next/link';
-import styles from '@/components/LoginPage/Login.module.scss';
+import styles from '@/components/UserLogin/LoginPage/Login.module.scss';
 
 export default function SignUpPage() {
     const form = useForm({
