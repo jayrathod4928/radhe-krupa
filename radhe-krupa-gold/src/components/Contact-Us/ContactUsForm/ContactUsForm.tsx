@@ -90,9 +90,9 @@ const ContactUsForm = () => {
 
     return (
         <div className={styles.orderSection}>
-            <Typography className={styles.formTitle}>
+            <h5 className={styles.formTitle}>
                 Leave a Message For Us
-            </Typography>
+            </h5>
 
             <AppForm
                 form={form}
