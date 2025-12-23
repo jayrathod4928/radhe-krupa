@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import Slider from "@/components/Slider/Slider";
-import CoinCard from "@/components/CoinCard/CoinCard";
-import ProductVariantSection from "@/components/ProductVariantCard/ProductVariantSection";
-import OccasionGrid from "@/components/OccasionCard/OccasionGrid/OccasionGrid";
+import Slider from "@/components/Home/Slider/Slider";
+import CoinCard from "@/components/Products/CoinCard/CoinCard";
+import ProductVariantSection from "@/components/Products/ProductVariantCard/ProductVariantSection";
+import OccasionGrid from "@/components/Products/OccasionCard/OccasionGrid/OccasionGrid";
 
 
 // Mock Data Imports
-import { OCCASION_MOCK_DATA } from "@/components/OccasionCard/mock";
+import { OCCASION_MOCK_DATA } from "@/components/Products/OccasionCard/mock";
 import { MOCK_PRODUCTS as COIN_PRODUCTS } from "@/data/mock";
 import { MOCK_PRODUCTS as VARIANT_PRODUCTS } from "@/data/mock";
 
@@ -18,11 +18,11 @@ import styles from "./page.module.scss";
 // Slider images
 import slide1 from "@/components/Images/Slide-4.jpg";
 import slide2 from "@/components/Images/Slide-5.jpg";
-import Hero from "@/components/Hero/Hero";
-import LuxuryGoldSection from "@/components/LuxuryGoldSection/LuxuryGoldSection";
-import WhyUsSection from "@/components/WhyUsSection/WhyUsSection";
-import TestimonialSlider from "@/components/TestimonialSlider/TestimonialSlider";
-import MapComponent from "@/components/MapComponent/MapComponent";
+import Hero from "@/components/Home/Hero/Hero";
+import LuxuryGoldSection from "@/components/Home/LuxuryGoldSection/LuxuryGoldSection";
+import WhyUsSection from "@/components/Home/WhyUsSection/WhyUsSection";
+import TestimonialSlider from "@/components/Home/TestimonialSlider/TestimonialSlider";
+import MapComponent from "@/components/Contact-Us/MapComponent/MapComponent";
 
 export default function Page() {
     /* ===============================

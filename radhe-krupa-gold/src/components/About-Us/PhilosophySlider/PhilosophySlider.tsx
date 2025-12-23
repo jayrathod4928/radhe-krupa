@@ -3,6 +3,10 @@
 import { useEffect, useState } from "react";
 import styles from "./PhilosophySlider.module.scss";
 import Image from "next/image";
+import ourPhilosophy from "@/components/Images/Our-Philosophy.png";
+import ourVision from "@/components/Images/Our-Vision.png";
+import ourMission from "@/components/Images/Our-Mission.png";
+
 
 const slides = [
     {
@@ -10,19 +14,19 @@ const slides = [
         text: `At Earth Mint, excellence isn't just a standard, it's our core philosophy.
 Every step we take reflects a commitment to quality. We are dedicated to
 serving global markets by producing gold products that embody superior craftsmanship.`,
-        icon: "https://earthmintgold.com/cdn/shop/files/Our_Philosophy_965b722e-b2de-42c2-9212-bad0bb716353.png?height=85&v=1747289028",
+        icon: ourPhilosophy,
     },
     {
         title: "Our Vision",
         text: `We aim to make gold more than a symbol of wealth – by transforming it
 into a source of inspiration, security, and connection for people all across the world.`,
-        icon: "http://earthmintgold.com/cdn/shop/files/Our_Vision_60715154-9896-454d-9617-e06db6279c84.png?height=85&v=1747289028",
+        icon: ourVision,
     },
     {
         title: "Our Mission",
         text: `We are committed to delivering pure, certified gold products with integrity
 and excellence—empowering customers and supporting artisans worldwide.`,
-        icon: "https://earthmintgold.com/cdn/shop/files/Our_Mission_9a347233-50cc-4207-bb4e-d6b0eac321c5.png?height=85&v=1747289028",
+        icon: ourMission,
     },
 ];
 

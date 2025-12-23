@@ -1,6 +1,6 @@
 import React from "react";
-import PolicyLayout from "@/components/PolicyLayout/PolicyLayout";
-import FaqAccordion from "@/components/Faq/FaqAccordion";
+import PolicyLayout from "@/components/Footer/Policies/PolicyLayout/PolicyLayout";
+import FaqAccordion from "@/components/Footer/Policies/Faq/FaqAccordion";
 
 const FAQPage = () => {
     return (

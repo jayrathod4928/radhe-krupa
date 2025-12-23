@@ -1,5 +1,5 @@
-import PolicyLayout from "@/components/PolicyLayout/PolicyLayout";
-import styles from "@/components/PolicyLayout/PolicyLayout.module.scss";
+import PolicyLayout from "@/components/Footer/Policies/PolicyLayout/PolicyLayout";
+import styles from "@/components/Footer/Policies/PolicyLayout/PolicyLayout.module.scss";
 
 export default function PrivacyPolicyPage() {
     return (

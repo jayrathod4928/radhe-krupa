@@ -4,8 +4,8 @@ import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { Grid } from '@mui/material';
 import styles from './ContactForm.module.scss';
-import { FieldGroup } from '@/components/FormProvider/FieldGroup';
-import TextInput from '@/components/FormInputs/TextInput';
+import { FieldGroup } from '@/components/Form/FormProvider/FieldGroup';
+import TextInput from '@/components/Form/FormInputs/TextInput';
 
 const ContactForm = () => {
     const methods = useForm();
