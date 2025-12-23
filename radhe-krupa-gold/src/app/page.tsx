@@ -10,7 +10,7 @@ import OccasionGrid from "@/components/OccasionCard/OccasionGrid/OccasionGrid";
 
 // Mock Data Imports
 import { OCCASION_MOCK_DATA } from "@/components/OccasionCard/mock";
-import { MOCK_PRODUCTS as COIN_PRODUCTS } from "@/components/CoinCard/mock";
+import { MOCK_PRODUCTS as COIN_PRODUCTS } from "@/data/mock";
 import { MOCK_PRODUCTS as VARIANT_PRODUCTS } from "@/components/ProductVariantCard/Mock";
 
 import styles from "./page.module.scss";
@@ -62,6 +62,7 @@ export default function Page() {
                             <CoinCard key={product.id} data={product} />
                         ))}
                     </div>
+
 
                     {showCoinViewMore && (
                         <div className={styles.viewMoreContainer}>

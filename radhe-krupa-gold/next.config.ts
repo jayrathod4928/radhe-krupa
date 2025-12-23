@@ -6,7 +6,10 @@ const nextConfig: NextConfig = {
 
     // ✅ Add external domains for next/image
     images: {
-        domains: ["earthmintgold.com"], // allow images from this host
+        domains: ["earthmintgold.com",
+            "cdn.shopify.com",
+        ],
+
     },
 };
 
