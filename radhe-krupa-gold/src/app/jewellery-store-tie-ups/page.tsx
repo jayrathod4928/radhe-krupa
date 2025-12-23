@@ -1,5 +1,5 @@
 import JewelleryTieUps from "@/components/JewelleryTieUps/JewelleryTieUps";
-import ContactForm from "@/components/ContactForm/ContactForm";
+import ContactForm from "@/components/JewelleryTieUps/ContactForm/ContactForm";
 
 
 export default function BulkOrdersPage() {

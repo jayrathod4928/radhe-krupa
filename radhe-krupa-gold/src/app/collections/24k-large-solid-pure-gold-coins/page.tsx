@@ -1,4 +1,4 @@
-import ProductVariantCard from "@/components/ProductVariantCard/ProductVariantCard";
+import ProductVariantCard from "@/components/Products/ProductVariantCard/ProductVariantCard";
 import styles from "@/app/page.module.scss";
 
 // ✅ Use SAME mock data

@@ -1,8 +1,8 @@
-import LetsConnect from "@/components/LetsConnect/LetsConnect";
-import Features from "@/components/Features/Features";
-import HeadOffice from "@/components/HeadOffice/HeadOffice";
-import ContactUsForm from "@/components/ContactUsForm/ContactUsForm";
-import MapComponent from "@/components/MapComponent/MapComponent";
+import LetsConnect from "@/components/Contact-Us/LetsConnect/LetsConnect";
+import Features from "@/components/Contact-Us/Features/Features";
+import HeadOffice from "@/components/Contact-Us/HeadOffice/HeadOffice";
+import ContactUsForm from "@/components/Contact-Us/ContactUsForm/ContactUsForm";
+import MapComponent from "@/components/Contact-Us/MapComponent/MapComponent";
 
 
 export default function ContactUsPage() {

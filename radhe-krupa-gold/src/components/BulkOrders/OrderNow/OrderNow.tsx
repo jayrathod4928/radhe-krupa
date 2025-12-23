@@ -3,8 +3,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Typography } from "@mui/material";
-import { AppForm } from "@/components/FormProvider/AppForm";
-import { FieldGroup } from "@/components/FormProvider/FieldGroup";
+import { AppForm } from "@/components/Form/FormProvider/AppForm";
+import { FieldGroup } from "@/components/Form/FormProvider/FieldGroup";
 import styles from "./OrderForm.module.scss";
 
 /* ================= INPUT ================= */
