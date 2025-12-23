@@ -2,7 +2,7 @@ import React from "react";
 import ProductVariantCard from "@/components/ProductVariantCard/ProductVariantCard";
 import styles from "@/app/page.module.scss";
 
-import { MOCK_PRODUCTS } from "@/components/CoinCard/mock";
+import { MOCK_PRODUCTS } from "@/data/mock";
 
 export default function LargeSolidGoldCoinsPage() {
     return (
