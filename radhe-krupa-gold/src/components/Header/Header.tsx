@@ -47,8 +47,14 @@ export default function Header() {
                     </div>
 
                     <div className={styles.rightIcons}>
-                        <UserIcon width={20} height={20} />
-                        <CartIcon width={20} height={20} />
+                        {/* Direct link to sign-in page */}
+                        <Link href="/signin" className={styles.iconLink}>
+                            <UserIcon width={20} height={20} />
+                        </Link>
+
+                        <Link href="/cart" className={styles.iconLink}>
+                            <CartIcon width={20} height={20} />
+                        </Link>
                     </div>
                 </div>
             </header>
