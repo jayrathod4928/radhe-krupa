@@ -9,7 +9,7 @@ export default function PrivacyPolicyPage() {
                 {
                     content: (
                         <p>
-                            Your privacy is important to us. This Privacy Policy outlines how Radhe Krupa collects, uses, and protects your personal information when you visit our website or make a purchase.
+                            Your privacy is important to us. This Privacy Policy outlines how RADHE KRUPA collects, uses, and protects your personal information when you visit our website or make a purchase.
                         </p>
                     ),
                 },

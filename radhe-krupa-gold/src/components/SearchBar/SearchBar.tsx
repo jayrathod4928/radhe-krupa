@@ -100,7 +100,7 @@ export default function SearchBar({ onClose, products }: SearchBarProps) {
                             {filteredResults.length > 0 ? (
                                 filteredResults.map((product) => (
                                     <Link
-                                        href={`/products/${product.id}`}
+                                        href={`/product/${product.id}`}
                                         key={product.id}
                                         onClick={onClose}
                                         className={styles.resultItem}
