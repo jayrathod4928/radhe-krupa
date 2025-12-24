@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// Import your components
 import Header from "@/components/Home/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import { CartProvider } from "@/context/CartContext";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -23,22 +23,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
                                        children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+                                   }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Header appears at the top of every page */}
-        <Header />
+        {/* ✅ CartProvider must wrap EVERYTHING */}
+        <CartProvider>
+            <Header />
 
-        {/* Main content of each page is injected here */}
-        <main style={{ minHeight: '70vh' }}>
-            {children}
-        </main>
+            <main style={{ minHeight: "70vh" }}>
+                {children}
+            </main>
 
-        {/* Footer appears at the bottom of every page */}
-        <Footer />
+            <Footer />
+        </CartProvider>
         </body>
         </html>
     );
