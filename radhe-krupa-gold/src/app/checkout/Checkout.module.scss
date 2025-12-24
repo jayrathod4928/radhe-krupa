@@ -36,7 +36,6 @@
       border-radius: 10px;
       border: 1px solid #ddd;
       font-size: .95rem;
-      margin-bottom: .8rem;
     }
 
     .row {
@@ -47,6 +46,7 @@
       input, select {
         flex: 1;
         min-width: 120px;
+        max-height: 50px;
       }
     }
 
@@ -198,3 +198,33 @@
     }
   }
 }
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  min-height: 90px;
+
+  label {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  input,
+  select {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    line-height: 1.2;
+  }
+}
+.row {
+  align-items: flex-start;
+}
+
