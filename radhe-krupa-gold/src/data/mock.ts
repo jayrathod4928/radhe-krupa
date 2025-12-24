@@ -6,7 +6,7 @@ import {StaticImageData} from "next/image";
 
 export interface WeightVariant {
     weight: string;
-    price: string;
+    price: number;
     image: StaticImageData | undefined; // ✅ optional
 }
 
@@ -23,13 +23,13 @@ export interface CoinProduct {
 }
 
 export const WEIGHT_VARIANTS: WeightVariant[] = [
-    { weight: "50mg",   price: "Rs. 1,145.00", image: maroonCard },
-    { weight: "100mg",  price: "Rs. 1,910.00", image: maroonCard },
-    { weight: "200mg",  price: "Rs. 3,345.00", image: maroonCard },
-    { weight: "300mg",  price: "Rs. 4,775.00", image: maroonCard },
-    { weight: "500mg",  price: "Rs. 7,710.00", image: maroonCard },
-    { weight: "1000mg", price: "Rs. 14,970.00", image: maroonCard },
-    { weight: "2000mg", price: "Rs. 29,080.00", image: maroonCard },
+    { weight: "50mg",   price: 1145, image: maroonCard },
+    { weight: "100mg",  price: 1910, image: maroonCard },
+    { weight: "200mg",  price: 3345, image: maroonCard },
+    { weight: "300mg",  price: 4775, image: maroonCard },
+    { weight: "500mg",  price: 7710, image: maroonCard },
+    { weight: "1000mg", price: 14970, image: maroonCard },
+    { weight: "2000mg", price: 29080, image: maroonCard },
 ];
 
 export const MOCK_PRODUCTS: CoinProduct[] = [
@@ -66,11 +66,11 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
         isCertificate: false,
         initialWeight: "0.1gm", // ✅ allowed
         variants: [
-            { weight: "0.1gm", price: "Rs. 1,910.00", image: goldCard },
-            { weight: "0.25gm", price: "Rs. 4,035.00", image: goldCard },
-            { weight: "0.5gm", price: "Rs. 7,490.00", image: goldCard },
-            { weight: "1gm", price: "Rs. 14,980.00", image: goldCard },
-            { weight: "2gm", price: "Rs. 1,19,760.00", image: goldCard },
+            { weight: "0.1gm", price: 1910, image: goldCard },
+            { weight: "0.25gm", price: 4035, image: goldCard },
+            { weight: "0.5gm", price: 7490, image: goldCard },
+            { weight: "1gm", price: 14980, image: goldCard },
+            { weight: "2gm", price: 119760, image: goldCard },
         ],
     },
     {

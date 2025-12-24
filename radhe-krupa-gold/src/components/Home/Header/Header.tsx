@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useCart } from "@/context/CartContext";
+import { motion, AnimatePresence } from "framer-motion";
 
 import styles from "./Header.module.scss";
 
@@ -16,6 +18,16 @@ import CartIcon from "@/components/Icons/CartIcon";
 
 export default function Header() {
     const pathname = usePathname();
+    const { items } = useCart();
+    const cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
+
+
+
+
+    // const cartCount = items.reduce(
+    //     (sum, item) => sum + item.quantity,
+    //     0
+    // );
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [productsOpen, setProductsOpen] = useState(false);
@@ -51,11 +63,27 @@ export default function Header() {
                     <div className={styles.rightIcons}>
                         {/* Direct link to sign-in page */}
                         <Link href="/signin" className={styles.iconLink}>
-                            <UserIcon width={20} height={20} />
+                            <UserIcon width={25} height={25} />
                         </Link>
 
                         <Link href="/cart" className={styles.iconLink}>
-                            <CartIcon width={20} height={20} />
+                            <motion.div whileTap={{ scale: 1 }}>
+                                <CartIcon width={25} height={25} />
+
+                                <AnimatePresence>
+                                    {cartCount > 0 && (
+                                        <motion.span
+                                            key={cartCount}
+                                            initial={{ scale: 0 }}
+                                            animate={{ scale: 1 }}
+                                            exit={{ scale: 0 }}
+                                            className={styles.cartBadge}
+                                        >
+                                            {cartCount}
+                                        </motion.span>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
                         </Link>
                     </div>
                 </div>
