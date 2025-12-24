@@ -28,6 +28,7 @@
   align-items: center;
   gap: 1rem;
 }
+
 .iconLink {
   display: flex;
   align-items: center;
@@ -40,6 +41,7 @@
     opacity: 0.7;
   }
 }
+
 /* ================= LOGO ================= */
 .logo {
   display: flex;
@@ -60,7 +62,15 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #ffffff;
+  color: #d4af37;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #ffffff;
+  }
 }
 
 .menuToggle {
@@ -72,29 +82,30 @@
   position: sticky;
   top: 0;
   z-index: 999;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
-
   padding: 1rem 0;
   background-color: var(--primary-bg);
   border-bottom: 1px solid #ffffff;
 }
 
-/* ================= NAV LINKS ================= */
-.desktopNav a {
+/* ================= NAV LINKS (Underline Animation) ================= */
+/* Applies to Desktop Nav and Top-Level Mobile SideNav Links (excluding dropdowns) */
+.desktopNav a,
+.sideNav > a {
   color: var(--gold);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
   position: relative;
   padding-bottom: 0.2rem;
+  width: fit-content; /* Critical for mobile to keep line short */
 }
 
-/* ===== Underline Animation ===== */
-.desktopNav a::after {
+.desktopNav a::after,
+.sideNav > a::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -107,11 +118,13 @@
 }
 
 .desktopNav a:hover::after,
-.desktopNav a.active::after {
+.desktopNav a.active::after,
+.sideNav > a:hover::after,
+.sideNav > a.active::after {
   width: 100%;
 }
 
-/* ================= DROPDOWN ================= */
+/* ================= DESKTOP DROPDOWN ================= */
 .dropdown {
   position: relative;
   color: #d4af37;
@@ -126,21 +139,14 @@
   margin-bottom: 4px;
 }
 
-/* Disable underline for dropdown label */
-.dropdown > span::after {
-  display: none !important;
-}
-
 .dropdownContent {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-
   min-width: 200px;
   background-color: var(--primary-bg);
   padding: 0.5rem 0;
-
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   z-index: 1000;
 }
@@ -148,6 +154,8 @@
 .dropdownContent a {
   display: block;
   padding: 0.8rem 1rem;
+  color: var(--gold);
+  text-decoration: none;
 }
 
 .dropdownContent a:hover {
@@ -156,10 +164,6 @@
 
 .dropdown:hover .dropdownContent {
   display: block;
-}
-
-.arrow {
-  font-size: 0.7rem;
 }
 
 /* ================= MOBILE OVERLAY ================= */
@@ -177,15 +181,12 @@
   left: 0;
   width: 280px;
   height: 100vh;
-
   background-color: var(--primary-bg);
   color: var(--gold);
-
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
   transform: translateX(-100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1002;
@@ -195,12 +196,6 @@
   transform: translateX(0);
 }
 
-.sideNav a {
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 15px;
-}
-
 /* ================= SIDE NAV DROPDOWN ================= */
 .sideNavItem button {
   background: none;
@@ -208,21 +203,26 @@
   color: var(--gold);
   font-size: 15px;
   cursor: pointer;
-
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
+  width: 100%;
+  padding: 0;
+  position: relative; /* Keep relative for layout but no ::after used here */
+}
+
+.sideNavItem button:hover {
+  color: #ffffff;
 }
 
 .sideDropdown {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.2rem; /* Increased gap to give space for the underline */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  padding-left: 1rem;
-
+  padding-left: 0.8rem;
   transition: all 0.4s ease;
 }
 
@@ -232,7 +232,35 @@
   margin-top: 1rem;
 }
 
-/* ================= CLOSE BUTTON ================= */
+/* Base styles for dropdown links to support underline */
+.sideDropdown a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+  width: fit-content; /* Ensures underline matches text width */
+  padding-bottom: 2px;
+}
+
+/* The Underline Element */
+.sideDropdown a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold);
+  transform: translateX(-50%);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Action */
+.sideDropdown a:hover::after {
+  width: 100%;
+}
+
+/* ================= UTILS ================= */
 .closeBtn {
   background: none;
   border: none;
@@ -240,24 +268,12 @@
   cursor: pointer;
   align-self: flex-end;
   transition: transform 0.3s ease;
+  &:hover { transform: rotate(90deg); }
 }
 
-.closeBtn:hover {
-  transform: rotate(90deg);
-}
-
-/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .menuToggle {
-    display: block;
-  }
-
-  .desktopNav {
-    display: none;
-  }
-}
-.cartWrapper {
-  position: relative;
+  .menuToggle { display: block; }
+  .desktopNav { display: none; }
 }
 
 .cartBadge {
@@ -275,3 +291,8 @@
   place-items: center;
 }
 
+.chevronWrapper {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
