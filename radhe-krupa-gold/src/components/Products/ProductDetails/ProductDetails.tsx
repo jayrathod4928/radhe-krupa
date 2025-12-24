@@ -8,9 +8,11 @@ import {
     ChevronRight,
     Share2,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import styles from "./ProductDetails.module.scss";
 import { CoinProduct, WeightVariant } from "@/data/mock";
 import ReviewSummary from "./ReviewSummary/ReviewSummary";
+import { useCart } from "@/context/CartContext";
 
 export default function ProductDetails({ product }: { product: CoinProduct }) {
     const [selectedVariant, setSelectedVariant] = useState<WeightVariant>(
@@ -18,6 +20,19 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
     );
     const [activeIndex, setActiveIndex] = useState(0);
     const [showDesc, setShowDesc] = useState(false);
+    const { addToCart } = useCart();
+    const handleAddToCart = () => {
+        addToCart({
+            id: product.id,
+            title: product.title,
+            image: product.imageUrls[0],
+            weight: selectedVariant.weight,
+            price: selectedVariant.price,
+            quantity: qty,
+        });
+    };
+
+    const [qty, setQty] = useState(1);
 
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -100,8 +115,22 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
 
                 {/* CART */}
                 <div className={styles.cartRow}>
-                    <input type="number" min={1} defaultValue={1} />
-                    <button className={styles.addToCartBtn}>Add to cart</button>
+                    <input
+                        type="number"
+                        min={1}
+                        value={qty}
+                        onChange={(e) => setQty(Number(e.target.value))}
+                    />
+                    <motion.button
+                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                        className={styles.addToCartBtn}
+                        onClick={handleAddToCart}
+                    >
+                        Add to cart
+                    </motion.button>
+
                 </div>
 
                 <div className={styles.metaRow}>

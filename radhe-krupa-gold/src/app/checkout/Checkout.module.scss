@@ -1,0 +1,154 @@
+.checkoutPage {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  font-family: "Playfair Display", serif;
+  color: #111;
+
+  h1 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    display: flex;
+    gap: 2rem;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+  }
+
+  .formSection {
+    flex: 2;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.06);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input, select {
+      padding: .8rem 1rem;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: .95rem;
+      margin-bottom: .8rem;
+    }
+
+    .row {
+      display: flex;
+      gap: 1rem;
+
+      input, select {
+        flex: 1;
+      }
+    }
+
+    .checkbox {
+      margin-top: 1rem;
+      input {
+        margin-right: .5rem;
+      }
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      margin-bottom: .5rem;
+    }
+  }
+
+  .summarySection {
+    /* Remove flex: 1 to prevent stretching */
+    /* flex: 1; */
+
+    background: #fdf6e3;
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-weight: 600;
+    color: #111;
+
+    max-height: fit-content; // ensures height only wraps content
+    width: 100%; // optional, makes it full width in column layout
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: .5rem 0;
+      border-bottom: 1px solid #e5e0d6;
+      font-weight: 500;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .payBtn {
+      margin-top: 1.5rem;
+      padding: .9rem;
+      background: linear-gradient(135deg, #d4af37, #b89b5e);
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #111;
+      font-size: 1rem;
+      transition: all .2s ease;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+
+    .paymentInfo {
+      font-size: .85rem;
+      color: #555;
+      margin-top: .8rem;
+    }
+  }
+}
+.billingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; // spacing between all input elements
+
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  input, select {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .row {
+    display: flex;
+    gap: 1rem; // spacing between inputs in the same row
+    flex-wrap: wrap;
+
+    select, input {
+      flex: 1; // inputs take equal width
+    }
+  }
+}
