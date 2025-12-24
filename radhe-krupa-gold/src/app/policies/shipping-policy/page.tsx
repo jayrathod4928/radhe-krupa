@@ -9,7 +9,7 @@ export default function ShippingPolicyPage() {
                 {
                     content: (
                         <p>
-                            At EARTHMINT, we strive to provide prompt and reliable shipping for all orders. Please review the following information regarding our shipping policy:
+                            At RADHEKRUPA, we strive to provide prompt and reliable shipping for all orders. Please review the following information regarding our shipping policy:
                         </p>
                     ),
                 },
