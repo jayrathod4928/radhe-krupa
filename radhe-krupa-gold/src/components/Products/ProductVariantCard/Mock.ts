@@ -1,5 +1,5 @@
 // mock.ts
-import goldCard from "@/components/Images/Gold-Card.jpg";
+import goldCard from "@/components/Images/Gold-Card.png";
 import {StaticImageData} from "next/image";
 
 export type WeightVariant = {

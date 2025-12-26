@@ -1,6 +1,6 @@
 import styles from './AboutUs.module.scss';
 import Image from 'next/image';
-import goldCard from "@/components/Images/Gold-Card.jpg";
+import goldCard from "@/components/Images/Gold-Card.png";
 
 
 const AboutUs = () => {

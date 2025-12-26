@@ -24,10 +24,12 @@
     flex-direction: column;
     padding: 100px 20px 60px;
     text-align: center;
+    gap: 0;
   }
 
   @media (max-width: 480px) {
     padding: 80px 16px 50px;
+    gap: 0;
   }
 }
 
@@ -46,7 +48,7 @@
 
 .heroImage {
   flex-shrink: 0;
-  width: 420px;
+  width: 460px;
 
   @media (max-width: 1024px) {
     width: 360px;
@@ -58,6 +60,7 @@
   }
 
   @media (max-width: 480px) {
+    height: 320px;
   }
 }
 
