@@ -9,6 +9,7 @@ interface AppFormProps {
     form: any;
     onSubmit: (data: any) => void;
     sx?: any;
+
     submitButtonText?: string | boolean;
     isLoading?: boolean;
 }

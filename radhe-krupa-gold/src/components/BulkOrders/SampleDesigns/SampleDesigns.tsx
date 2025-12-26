@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./SampleDesigns.module.scss";
 
 // Replace these with your actual image paths
-import maroonCard from "@/components/Images/Maroon-Card.jpg";
-import goldCard from "@/components/Images/Gold-Card.jpg";
+import maroonCard from "@/components/Images/Maroon-Card.png";
+import goldCard from "@/components/Images/Gold-Card.png";
 
 type Slide = {
     id: number;
