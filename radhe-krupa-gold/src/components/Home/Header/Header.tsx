@@ -174,9 +174,9 @@ export default function Header() {
                             productsOpen ? styles.open : ""
                         }`}
                     >
-                        <Link href="#" onClick={() => setMenuOpen(false)}>Large Gold Coin</Link>
-                        <Link href="#" onClick={() => setMenuOpen(false)}>Extra-Large Slim Gold Coin</Link>
-                        <Link href="/products" onClick={() => setMenuOpen(false)}>All Items</Link>
+                        <Link href="/collections/24k-extra-large-pure-gold-coins" onClick={() => setMenuOpen(false)}>Large Gold Coin</Link>
+                        <Link href="/collections/24k-extra-large-pure-gold-coins" onClick={() => setMenuOpen(false)}>Extra-Large Slim Gold Coin</Link>
+                        <Link href="/collections/24k-extra-large-pure-gold-coins" onClick={() => setMenuOpen(false)}>All Items</Link>
                     </div>
                 </div>
 
