@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Earth Mint Gold",
+    title: "Radhe Krupa Gold",
     description: "Gold production and development company",
 };
 

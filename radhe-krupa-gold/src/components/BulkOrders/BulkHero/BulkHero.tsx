@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./BulkHero.module.scss";
-import goldCard from "@/components/Images/Gold-Card.png";
+import goldCard from "@/components/Images/Gold.jpg";
 
 
 const BulkHero = () => {

@@ -7,6 +7,77 @@ import { AppForm } from "@/components/Form/FormProvider/AppForm";
 import { FieldGroup } from "@/components/Form/FormProvider/FieldGroup";
 import styles from "./OrderForm.module.scss";
 
+/* ================= MULTI-IMAGE UPLOAD ================= */
+const FormFileUpload = ({ value = [], onChange, error }: any) => {
+    const [previews, setPreviews] = useState<string[]>([]);
+    const MAX_IMAGES = 5;
+
+    // Handle adding files
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const files = Array.from(e.target.files || []);
+        const availableSlots = MAX_IMAGES - value.length;
+        const filesToAdd = files.slice(0, availableSlots);
+
+        if (filesToAdd.length > 0) {
+            const updatedFiles = [...value, ...filesToAdd];
+            onChange(updatedFiles);
+
+            filesToAdd.forEach((file) => {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setPreviews((prev) => [...prev, reader.result as string]);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+    };
+
+    // Handle removing files
+    const removeImage = (index: number) => {
+        const updatedFiles = value.filter((_: any, i: number) => i !== index);
+        const updatedPreviews = previews.filter((_, i) => i !== index);
+        onChange(updatedFiles);
+        setPreviews(updatedPreviews);
+    };
+
+    return (
+        <div className={styles.uploadWrapper}>
+            <div className={styles.imageGrid}>
+                {previews.map((src, index) => (
+                    <div key={index} className={styles.previewContainer}>
+                        <img src={src} alt={`Preview ${index}`} className={styles.previewImage} />
+                        <button
+                            type="button"
+                            className={styles.removeBtn}
+                            onClick={() => removeImage(index)}
+                        >
+                            ×
+                        </button>
+                    </div>
+                ))}
+
+                {value.length < MAX_IMAGES && (
+                    <label className={`${styles.uploadBox} ${error ? styles.inputError : ""}`}>
+                        <input
+                            type="file"
+                            multiple
+                            accept="image/*"
+                            onChange={handleFileChange}
+                            className={styles.hiddenInput}
+                        />
+                        <div className={styles.uploadPlaceholder}>
+                            <span className={styles.uploadIcon}>+</span>
+                            <p>{value.length === 0 ? "Upload Designs" : "Add More"}</p>
+                            <small>{value.length} / {MAX_IMAGES}</small>
+                        </div>
+                    </label>
+                )}
+            </div>
+            {error && <p className={styles.errorText}>{error.message}</p>}
+        </div>
+    );
+};
+
 /* ================= INPUT ================= */
 const FormInput = ({ error, ...props }: any) => (
     <div className={styles.inputWrapper}>
@@ -26,10 +97,7 @@ const FormSelect = ({ value, onChange, placeholder, options, error }: any) => {
 
     useEffect(() => {
         const clickOutside = (e: MouseEvent) => {
-            if (
-                containerRef.current &&
-                !containerRef.current.contains(e.target as Node)
-            ) {
+            if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
                 setIsOpen(false);
             }
         };
@@ -40,16 +108,12 @@ const FormSelect = ({ value, onChange, placeholder, options, error }: any) => {
     return (
         <div className={styles.selectWrapper} ref={containerRef}>
             <div
-                className={`${styles.selectHeader} ${
-                    isOpen ? styles.active : ""
-                } ${error ? styles.inputError : ""}`}
+                className={`${styles.selectHeader} ${isOpen ? styles.active : ""} ${error ? styles.inputError : ""}`}
                 onClick={() => setIsOpen(!isOpen)}
             >
-        <span>
-          {value
-              ? options.find((o: any) => o.value === value)?.label
-              : placeholder}
-        </span>
+                <span>
+                    {value ? options.find((o: any) => o.value === value)?.label : placeholder}
+                </span>
                 <span className={styles.chevron}></span>
             </div>
 
@@ -78,10 +142,7 @@ const FormSelect = ({ value, onChange, placeholder, options, error }: any) => {
 /* ================= TEXTAREA ================= */
 const FormTextarea = ({ error, ...props }: any) => (
     <div className={styles.inputWrapper}>
-    <textarea
-        {...props}
-        className={error ? styles.inputError : ""}
-    />
+        <textarea {...props} className={error ? styles.inputError : ""} />
         {error && <p className={styles.errorText}>{error.message}</p>}
     </div>
 );
@@ -95,6 +156,7 @@ export default function OrderNowPage() {
             email: "",
             phone: "",
             message: "",
+            customImages: [],
         },
     });
 
@@ -137,6 +199,12 @@ export default function OrderNowPage() {
             renderer: FormInput,
         },
         {
+            name: "customImages",
+            label: "Upload Your Designs (Max 5)",
+            xs: 12,
+            renderer: FormFileUpload,
+        },
+        {
             name: "message",
             label: "Message",
             xs: 12,
@@ -153,7 +221,7 @@ export default function OrderNowPage() {
             <br />
             <AppForm
                 form={form}
-                onSubmit={(data: any) => console.log(data)}
+                onSubmit={(data: any) => console.log("Final Submission:", data)}
                 submitButtonText="Send"
             >
                 <FieldGroup

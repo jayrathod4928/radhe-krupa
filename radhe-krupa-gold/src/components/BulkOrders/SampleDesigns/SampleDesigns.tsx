@@ -6,9 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./SampleDesigns.module.scss";
 
 // Replace these with your actual image paths
-import maroonCard from "@/components/Images/Maroon-Card.png";
-import goldCard from "@/components/Images/Gold-Card.png";
-
+import weddingFront from "@/components/Images/Wedding-Front.png";
+import weddingBack from "@/components/Images/Wedding-Back.png";
+import anniversaryBack from "@/components/Images/Anniversary-Front.png";
+import anniversaryFront from "@/components/Images/Anniversary-Back.png";
+import babyBoyFront from "@/components/Images/Baby-Boy-Front.png";
+import babyBoyBack from "@/components/Images/Baby-Boy-Back.png";
+import babyGirlFront from "@/components/Images/Baby-Girl-Front.png";
+import babyGirlBack from "@/components/Images/Baby-Girl-Back.png";
 type Slide = {
     id: number;
     front: StaticImageData | string;
@@ -16,10 +21,10 @@ type Slide = {
 };
 
 const slides: Slide[] = [
-    { id: 1, front: maroonCard, back: goldCard }, // Example paths from your video
-    { id: 2, front: goldCard, back: maroonCard },
-    { id: 3, front: maroonCard, back: goldCard },
-    { id: 4, front: goldCard, back: maroonCard },
+    { id: 1, front: weddingFront, back: weddingBack },
+    { id: 2, front: anniversaryBack, back: anniversaryFront },
+    { id: 3, front: babyBoyFront, back: babyBoyBack },
+    { id: 4, front: babyGirlFront, back: babyGirlBack },
 ];
 
 
