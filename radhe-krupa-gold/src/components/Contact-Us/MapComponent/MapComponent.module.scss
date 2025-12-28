@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
 
   .mapTitle {
     font-family: 'Inter', sans-serif; // Or your preferred font
@@ -39,8 +38,6 @@
 
 @media (max-width: 768px) {
   .mapContainer {
-    padding: 2rem 0;
-
     .mapTitle {
       font-size: 1.8rem;
       margin-bottom: 1.5rem;

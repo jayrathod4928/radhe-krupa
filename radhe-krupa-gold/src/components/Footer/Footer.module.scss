@@ -182,6 +182,32 @@ $text-white: #ffffff;
 
 @media (max-width: 600px) {
   .column h3 .chevron {
-    display: block; // Show only on mobile
+    display: block;
+  }
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+
+  a {
+    color: $text-white;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: $gold-color;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .socialIcons {
+    justify-content: flex-start;
+    margin-top: 0.5rem;
   }
 }

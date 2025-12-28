@@ -5,6 +5,10 @@ import Image from "next/image";
 import Logo from "@/components/Images/Radhe-Krupa-Gold.png";
 import Payment from "@/components/Images/Payment.png";
 
+// Import Icons
+import { FaInstagram, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { SiThreads } from "react-icons/si";
+
 const Footer: React.FC = () => {
     const [openSection, setOpenSection] = useState<string | null>(null);
 
@@ -91,6 +95,20 @@ const Footer: React.FC = () => {
                     {/* Newsletter */}
                     <div className={styles.newsletterColumn}>
                         <h3>Follow us</h3>
+                        <div className={styles.socialIcons}>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <FaInstagram size={20} />
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <FaLinkedinIn size={20} />
+                            </a>
+                            <a href="https://wa.me/919510886655" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                <FaWhatsapp size={20} />
+                            </a>
+                            <a href="https://threads.net" target="_blank" rel="noopener noreferrer" aria-label="Threads">
+                                <SiThreads size={20} />
+                            </a>
+                        </div>
                         <p>Never miss any news.</p>
                         <div className={styles.newsletter}>
                             <input type="email" placeholder="Email" aria-label="Email" />
