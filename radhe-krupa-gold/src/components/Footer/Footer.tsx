@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
                     <div className={styles.newsletterColumn}>
                         <h3>Follow us</h3>
                         <div className={styles.socialIcons}>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <a href="https://www.instagram.com/radhekrupaa?igsh=ZjA0bTBua21mYXBs" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                                 <FaInstagram size={20} />
                             </a>
                             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

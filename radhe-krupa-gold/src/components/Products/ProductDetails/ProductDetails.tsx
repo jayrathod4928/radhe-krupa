@@ -2,18 +2,29 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import { FaChevronDown, FaLock  } from "react-icons/fa";
+import {
+    FaChevronDown,
+    FaLock,
+    FaWhatsapp,
+    FaFacebookF,
+    FaPinterestP,
+    FaEnvelope,
+    FaLinkedinIn,
+    FaInstagram
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import {
     ChevronLeft,
     ChevronRight,
     Share2,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ProductDetails.module.scss";
 import { CoinProduct, WeightVariant } from "@/data/mock";
 import ReviewSummary from "./ReviewSummary/ReviewSummary";
 import { useCart } from "@/context/CartContext";
-import Toast from "@/components/Toast/Toast"; // ✅ Import Toast component
+import Toast from "@/components/Toast/Toast";
+import {SiThreads} from "react-icons/si";
 
 export default function ProductDetails({ product }: { product: CoinProduct }) {
     const [selectedVariant, setSelectedVariant] = useState<WeightVariant>(
@@ -21,10 +32,15 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
     );
     const [activeIndex, setActiveIndex] = useState(0);
     const [showDesc, setShowDesc] = useState(false);
-    const [showToast, setShowToast] = useState(false); // ✅ Toast State
+    const [showToast, setShowToast] = useState(false);
+    const [showShare, setShowShare] = useState(false); // ✅ Share State
     const [qty, setQty] = useState(1);
 
     const { addToCart } = useCart();
+
+    // Dynamically get the URL for sharing
+    const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+    const shareTitle = encodeURIComponent(`Check out this ${product.title}`);
 
     const handleAddToCart = () => {
         addToCart({
@@ -36,7 +52,6 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
             quantity: qty,
         });
 
-        // ✅ Show toast then hide after 3 seconds
         setShowToast(true);
         setTimeout(() => setShowToast(false), 3000);
     };
@@ -54,12 +69,11 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
 
     return (
         <>
-            {/* ✅ Toast Notification */}
             <Toast
                 isVisible={showToast}
-                message={`${product.title} (${selectedVariant.weight}) added to cart!`} onClose={function (): void {
-                throw new Error("Function not implemented.");
-            }}            />
+                message={`${product.title} (${selectedVariant.weight}) added to cart!`}
+                onClose={() => setShowToast(false)}
+            />
 
             <div className={styles.container}>
                 {/* GALLERY */}
@@ -102,7 +116,6 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
                         ₹{selectedVariant.price.toLocaleString("en-IN")}
                     </p>
 
-                    {/* WEIGHTS */}
                     <h5 className={styles.weightTitle}>Weight</h5>
                     <div className={styles.weights}>
                         {product.variants.map((v) => (
@@ -115,11 +128,7 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
                             >
                                 <div className={styles.weightImg}>
                                     {v.image && (
-                                        <Image
-                                            src={v.image}
-                                            alt={v.weight}
-                                            fill
-                                        />
+                                        <Image src={v.image} alt={v.weight} fill />
                                     )}
                                 </div>
                                 <span className={styles.weightText}>{v.weight}</span>
@@ -127,8 +136,6 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
                         ))}
                     </div>
 
-
-                    {/* CART */}
                     <div className={styles.cartRow}>
                         <input
                             type="number"
@@ -145,15 +152,81 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
                         >
                             Add to cart
                         </motion.button>
-
                     </div>
 
                     <div className={styles.metaRow}>
                         <span>SKU: ES-BL-1</span>
-                        <Share2 size={16} />
                     </div>
 
-                    {/* TRUST IMAGE */}
+                        {/* ✅ SHARE SECTION */}
+                        <div className={styles.shareWrapper}>
+                            <Share2
+                                size={18}
+                                className={styles.shareIcon}
+                                onClick={() => setShowShare(!showShare)}
+                            />
+
+                            <AnimatePresence>
+                                {showShare && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                        className={styles.sharePopup}
+                                    >
+                                        {/* WhatsApp */}
+                                        <a
+                                            href={`https://wa.me/?text=${encodeURIComponent("Check this out: https://www.instagram.com/radhekrupaa")}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.whatsapp}
+                                        >
+                                            <FaWhatsapp />
+                                        </a>
+
+                                        {/* Instagram - Native Share (Best for DMs) */}
+                                        <button
+                                            className={styles.instagram}
+                                            style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+                                            onClick={() => {
+                                                if (navigator.share) {
+                                                    navigator.share({
+                                                        title: 'Radhe Krupa',
+                                                        url: 'https://www.instagram.com/radhekrupaa'
+                                                    }).catch(() => {});
+                                                } else {
+                                                    // Fallback for desktop where share API isn't available
+                                                    window.open("https://www.instagram.com/direct/inbox/", "_blank");
+                                                }
+                                            }}
+                                        >
+                                            <FaInstagram />
+                                        </button>
+
+                                        {/* LinkedIn */}
+                                        <a
+                                            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.instagram.com/radhekrupaa")}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.linkedin}
+                                        >
+                                            <FaLinkedinIn />
+                                        </a>
+
+                                        {/* Threads */}
+                                        <a
+                                            href={`https://www.threads.net/intent/post?text=${encodeURIComponent("Check this out: https://www.instagram.com/radhekrupaa")}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.threads}
+                                        >
+                                            <SiThreads />
+                                        </a>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+
                     <div className={styles.trustImage}>
                         <Image
                             src="https://cdn.shopify.com/s/files/1/0657/9391/7063/files/We_Are_Available_on_580_x_90_px_580_x_110_px_580_x_130_px.png?v=1749038697"
@@ -165,13 +238,10 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
                         />
                     </div>
 
-
                     <div className={styles.description}>
                         <button onClick={() => setShowDesc(!showDesc)}>
                             <span>Description</span>
-                            <FaChevronDown
-                                className={`${styles.chevron} ${showDesc ? styles.open : ""}`}
-                            />
+                            <FaChevronDown className={`${styles.chevron} ${showDesc ? styles.open : ""}`} />
                         </button>
 
                         {showDesc && (
@@ -186,7 +256,6 @@ export default function ProductDetails({ product }: { product: CoinProduct }) {
                         )}
                     </div>
 
-                    {/* PAYMENT */}
                     <div className={styles.payment}>
                         <FaLock className={styles.lockIcon} />
                         <div className={styles.left}>

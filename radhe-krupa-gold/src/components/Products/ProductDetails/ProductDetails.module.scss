@@ -441,3 +441,72 @@
     margin-top: 20px;
   }
 }
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.shareWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.shareIcon {
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #b8924a; // Gold color on hover
+  }
+}
+
+.sharePopup {
+  position: absolute;
+  bottom: 150%; // Positions it above the icon
+  transform: translateX(-50%);
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  white-space: nowrap;
+  z-index: 100;
+
+  // Small triangle pointer at the bottom
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+  }
+
+  a {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  // Exact colors based on your image
+  /* Using your specific hex codes with corrected names */
+  .whatsapp { color: limegreen; }
+  .instagram { color: #e60023; }
+  .linkedin { color: #3b5998; }
+  .threads { color: #000000; }
+}
