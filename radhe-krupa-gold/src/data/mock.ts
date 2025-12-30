@@ -1,5 +1,10 @@
 // src/data/mock.ts
 import maroonCard from "@/components/Images/Maroon-Card.png";
+import maroonCard1 from "@/components/Images/maroon-1.png";
+import maroonCard2 from "@/components/Images/maroon-3.png";
+import maroonCard3 from "@/components/Images/maroon-4.png";
+import maroonCard4 from "@/components/Images/maroon-2.png";
+
 import {StaticImageData} from "next/image";
 
 
@@ -38,7 +43,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
         title: "GANESH JI",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
         // Using the same image multiple times for demonstration
-        imageUrls: [maroonCard, maroonCard, maroonCard, maroonCard, maroonCard, maroonCard, maroonCard, maroonCard],
+        imageUrls: [maroonCard1, maroonCard, maroonCard, maroonCard, maroonCard, maroonCard, maroonCard, maroonCard],
         isCertificate: true,
         variants: WEIGHT_VARIANTS,
     },
@@ -46,7 +51,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
         id: "2",
         title: "LAXMI JI",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard],
+        imageUrls: [maroonCard2],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },
@@ -54,7 +59,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
         id: "3",
         title: "DO MURTI",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard],
+        imageUrls: [maroonCard3],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },
@@ -62,7 +67,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
         id: "4",
         title: "KALPAVRIKSHA",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard, maroonCard,maroonCard, maroonCard,maroonCard, maroonCard,maroonCard, maroonCard],
+        imageUrls: [maroonCard4, maroonCard,maroonCard, maroonCard,maroonCard, maroonCard,maroonCard, maroonCard],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },
