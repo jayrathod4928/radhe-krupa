@@ -120,9 +120,7 @@ export default function Header() {
                     </span>
 
                     <div className={styles.dropdownContent}>
-                        <Link href="/collections/24k-extra-large-pure-gold-coins">Large Gold Coin</Link>
-                        <Link href="/collections/24k-large-solid-pure-gold-coins">Extra-Large Slim Gold Coin</Link>
-                        <Link href="/collections/24k-large-solid-pure-gold-coins">All Items</Link>
+                        <Link href="/collections/products">All Items</Link>
                     </div>
                 </div>
 
@@ -174,9 +172,7 @@ export default function Header() {
                             productsOpen ? styles.open : ""
                         }`}
                     >
-                        <Link href="/collections/24k-extra-large-pure-gold-coins" onClick={() => setMenuOpen(false)}>Large Gold Coin</Link>
-                        <Link href="/collections/24k-extra-large-pure-gold-coins" onClick={() => setMenuOpen(false)}>Extra-Large Slim Gold Coin</Link>
-                        <Link href="/collections/24k-extra-large-pure-gold-coins" onClick={() => setMenuOpen(false)}>All Items</Link>
+                        <Link href="/collections/products" onClick={() => setMenuOpen(false)}>All Items</Link>
                     </div>
                 </div>
 

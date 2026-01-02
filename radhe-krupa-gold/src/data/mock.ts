@@ -1,4 +1,17 @@
-import maroonCard from "@/components/Images/Maroon-Card.png";
+import maroonCard from "@/components/Images/Radha-Krishna.png";
+import maroonCard1 from "@/components/Images/Laxmi-ji.png";
+import maroonCard2 from "@/components/Images/Trishul.png";
+import maroonCard3 from "@/components/Images/Kalpavriksha.png";
+import maroonCard4 from "@/components/Images/Mahal.png";
+import maroonCard5 from "@/components/Images/Do-Murti.png";
+import maroonCard6 from "@/components/Images/George.png";
+import maroonCard7 from "@/components/Images/Tree.png";
+import maroonCard8 from "@/components/Images/Ganpati.png";
+import maroonCard9 from "@/components/Images/Jagannath.png";
+import maroonCard10 from "@/components/Images/Hawa-Mahal.png";
+import maroonCard11 from "@/components/Images/Couple.png";
+import maroonCard12 from "@/components/Images/Rose.png";
+
 import hoverImage from "@/components/Images/MaroonCardBack.png";
 
 import {StaticImageData} from "next/image";
@@ -38,7 +51,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
         title: "GANESH JI",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
         // Using the same image multiple times for demonstration
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard8, hoverImage],
         isCertificate: true,
         variants: WEIGHT_VARIANTS,
     },
@@ -46,13 +59,13 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
         id: "2",
         title: "LAXMI JI",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard1, hoverImage],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },
     {
         id: "3",
-        title: "DO MURTI",
+        title: "RADHA KRISHNA",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
         imageUrls: [maroonCard, hoverImage],
         isCertificate: false,
@@ -62,24 +75,24 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
         id: "4",
         title: "KALPAVRIKSHA",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard3, hoverImage],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },
     {
         id: "5",
-        title: "GANESH JI",
+        title: "TRISHUL",
         // This is the string shown BEFORE selection
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard2, hoverImage],
         isCertificate: true,
         variants: WEIGHT_VARIANTS,
     },
     {
         id: "6",
-        title: "LAXMI JI",
+        title: "MAHAL",
         priceRange: "Rs. 1,145.00 - Rs. 29,080.00",
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard4, hoverImage],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },
@@ -87,48 +100,56 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
         id: "7",
         title: "DO MURTI",
         priceRange: "Rs. 1,145.00 - Rs. 29,080.00",
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard5, hoverImage],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },
     {
         id: "8",
-        title: "KALPAVRIKSHA",
+        title: "GEORGE V. KING",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard6, hoverImage],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },
     {
         id: "9",
-        title: "GANESH JI",
+        title: "TREE",
         // This is the string shown BEFORE selection
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard7, hoverImage],
         isCertificate: true,
         variants: WEIGHT_VARIANTS,
     },
     {
         id: "10",
-        title: "LAXMI JI",
+        title: "JAGANNATH",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard9, hoverImage],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },
     {
         id: "11",
-        title: "DO MURTI",
+        title: "HAWA MAHAL",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard10, hoverImage],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },
     {
         id: "12",
-        title: "KALPAVRIKSHA",
+        title: "MARRIED COUPLES",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
-        imageUrls: [maroonCard, hoverImage],
+        imageUrls: [maroonCard11, hoverImage],
+        isCertificate: false,
+        variants: WEIGHT_VARIANTS,
+    },
+    {
+        id: "13",
+        title: "ROSE",
+        priceRange: "Rs. 830.00 - Rs. 14,950.00",
+        imageUrls: [maroonCard12, hoverImage],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
     },

@@ -4,14 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import Slider from "@/components/Home/Slider/Slider";
 import CoinCard from "@/components/Products/CoinCard/CoinCard";
-import ProductVariantSection from "@/components/Products/ProductVariantCard/ProductVariantSection";
 import OccasionGrid from "@/components/Products/OccasionCard/OccasionGrid/OccasionGrid";
 
 
 // Mock Data Imports
 import { OCCASION_MOCK_DATA } from "@/components/Products/OccasionCard/mock";
 import { MOCK_PRODUCTS as COIN_PRODUCTS } from "@/data/mock";
-import { MOCK_PRODUCTS as VARIANT_PRODUCTS } from "@/data/mock";
 
 import styles from "./page.module.scss";
 
@@ -53,7 +51,7 @@ export default function Page() {
                 {/* ===== COIN CARD SECTION ===== */}
                 <section className={styles.coinSection}>
                     <div className={styles.sectionHeader}>
-                        <h2>Extra Large Slim Gold Coins</h2>
+                        <h2>Products</h2>
                         <p>Sleek in Form, Grand in Value</p>
                     </div>
 
@@ -67,7 +65,7 @@ export default function Page() {
                     {showCoinViewMore && (
                         <div className={styles.viewMoreContainer}>
                             <Link
-                                href="/collections/24k-extra-large-pure-gold-coins"
+                                href="/collections/products"
                                 className={styles.viewMoreBtn}
                             >
                                 View More
@@ -99,16 +97,6 @@ export default function Page() {
                        itself doesn't include one, but typically it would. */}
                     <WhyUsSection />
                 </section>
-
-                {/* ===== PRODUCT VARIANT CARD SECTION (REUSABLE) ===== */}
-                <ProductVariantSection
-                    title="Large Solid Gold Coins"
-                    subtitle="Make a Statement with Solid Gold"
-                    products={VARIANT_PRODUCTS}
-                    visibleLimit={8}
-                    viewMoreLink="/collections/24k-extra-large-pure-gold-coins"
-                />
-
                 <TestimonialSlider />
                 <section>
 
