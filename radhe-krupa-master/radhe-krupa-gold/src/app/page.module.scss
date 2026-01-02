@@ -27,7 +27,7 @@ $text-dark: #1a1a1a;
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); // Mobile: 1 per row
-  gap: 1rem;
+  gap: 2rem;
   //margin-bottom: 3rem; // Space between grid and button
 
   // Tablet: 3 per row
