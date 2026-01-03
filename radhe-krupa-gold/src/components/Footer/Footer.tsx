@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
                         </h3>
                         <div className={styles.collapsibleContent}>
                             <p>+91 9054054027</p>
-                            <p>sales@radhekrupa.com.in</p>
+                            <p>sales@radhekrupa.com</p>
                             <p>B5 samrat complex, near choice restaurant,</p>
                             <p>c g road, Ahmedabad 380009</p>
                         </div>
