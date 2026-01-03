@@ -1,26 +1,28 @@
 // app/product/[id]/page.tsx
-"use client";
-
 import React from "react";
-import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import { MOCK_PRODUCTS } from "@/data/mock";
 import ProductDetails from "@/components/Products/ProductDetails/ProductDetails";
-import { notFound } from "next/navigation";
 
-export default function ProductPage() {
-    const params = useParams();
+// This function tells Next.js to create the folders 1, 2, 3... that we see in your cPanel
+export async function generateStaticParams() {
+    return MOCK_PRODUCTS.map((product) => ({
+        id: String(product.id),
+    }));
+}
 
-    // Find the product in your mock data that matches the URL ID
-    const product = MOCK_PRODUCTS.find((p) => p.id === params.id);
+// In Next.js 15+, params is a Promise
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
 
-    // If the user types an ID that doesn't exist (e.g. /product/999)
+    const product = MOCK_PRODUCTS.find((p) => String(p.id) === String(id));
+
     if (!product) {
-        return notFound();
+        notFound();
     }
 
     return (
         <div style={{ padding: "20px" }}>
-            {/* Passing the found product data to your details component */}
             <ProductDetails product={product} />
         </div>
     );

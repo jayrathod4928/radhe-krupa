@@ -91,7 +91,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
     {
         id: "6",
         title: "MAHAL",
-        priceRange: "Rs. 1,145.00 - Rs. 29,080.00",
+        priceRange: "Rs. 830.00 - Rs. 14,950.00",
         imageUrls: [maroonCard4, hoverImage],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,
@@ -99,7 +99,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
     {
         id: "7",
         title: "DO MURTI",
-        priceRange: "Rs. 1,145.00 - Rs. 29,080.00",
+        priceRange: "Rs. 830.00 - Rs. 14,950.00",
         imageUrls: [maroonCard5, hoverImage],
         isCertificate: false,
         variants: WEIGHT_VARIANTS,

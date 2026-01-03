@@ -13,9 +13,9 @@ const HeadOffice = () => {
                 </div>
 
                 <div className={styles.actions}>
-                    <a href="tel:+919510886655" className={styles.actionCard}>
+                    <a href="tel:+919054054027" className={styles.actionCard}>
                         <FaPhoneAlt />
-                        <span>9510886655</span>
+                        <span>9054054027</span>
                     </a>
 
                     <a
@@ -27,7 +27,7 @@ const HeadOffice = () => {
                     </a>
 
                     <a
-                        href="https://api.whatsapp.com/send/?phone=919510886655&text&type=phone_number&app_absent=0"
+                        href="https://api.whatsapp.com/send/?phone=919054054027&text&type=phone_number&app_absent=0"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.actionCard}

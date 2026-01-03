@@ -85,8 +85,8 @@ const Footer: React.FC = () => {
                             CONTACT US <ChevronIcon />
                         </h3>
                         <div className={styles.collapsibleContent}>
-                            <p>+91 9510886655</p>
-                            <p>sales@earthmint.in</p>
+                            <p>+91 9054054027</p>
+                            <p>sales@radhekrupa.com.in</p>
                             <p>B5 samrat complex, near choice restaurant,</p>
                             <p>c g road, Ahmedabad 380009</p>
                         </div>
@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
                             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                 <FaLinkedinIn size={20} />
                             </a>
-                            <a href="https://wa.me/919510886655" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                            <a href="https://wa.me/919054054027" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                                 <FaWhatsapp size={20} />
                             </a>
                             <a href="https://threads.net" target="_blank" rel="noopener noreferrer" aria-label="Threads">
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
                 <div className={styles.bottomBar}>
                     <div className={styles.copyright}>
                         <Image src={Logo} alt="Radhe Krupa Logo" className={styles.logo} />
-                        <p>© 2025 Radhe Krupa Gold, Designed By Radhe Krupa</p>
+                        <p>© 2025 Radhe Krupa Gold, Designed By SEULUXE</p>
                     </div>
                     <div className={styles.paymentIcons}>
                         <Image src={Payment} alt="Payment" />
