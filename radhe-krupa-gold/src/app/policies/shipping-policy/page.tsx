@@ -60,10 +60,10 @@ export default function ShippingPolicyPage() {
                         <p>
                             If you have any questions or concerns about our shipping policy, please contact us at{" "}
                             <a
-                                href="mailto:orders@radhekurpagold.com"
+                                href="mailto:orders@radhekurpagoldcoin.com"
                                 className={styles.email}
                             >
-                                orders@radhekurpagold.com
+                                orders@radhekurpagoldcoin.com
                             </a>
                             .
                         </p>

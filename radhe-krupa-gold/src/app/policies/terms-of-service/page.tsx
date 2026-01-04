@@ -9,7 +9,7 @@ export default function TermsOfServicePage() {
                 {
                     content: (
                         <p>
-                            Welcome to RADHE KRUPA, operated by SHREE NAKODA JI SUVARAN. By accessing or using our website {" "}( <span className={styles.highlight}>https://radhekrupagold.com</span> ), you agree to comply with and be bound by the following terms and conditions of use. Please read these terms carefully before using our Site.
+                            Welcome to RADHE KRUPA, operated by SHREE NAKODA JI SUVARAN. By accessing or using our website {" "}( <span className={styles.highlight}>https://radhekrupagoldcoin.com</span> ), you agree to comply with and be bound by the following terms and conditions of use. Please read these terms carefully before using our Site.
                         </p>
                     ),
                 },

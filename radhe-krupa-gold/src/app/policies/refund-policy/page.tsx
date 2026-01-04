@@ -109,10 +109,10 @@ export default function RefundPolicyPage() {
                             you wish to participate in our buyback program, please
                             contact us at{" "}
                             <a
-                                href="mailto:orders@radhekrupagold.com"
+                                href="mailto:orders@radhekrupagoldcoin.com"
                                 className={styles.email}
                             >
-                                orders@radhekrupagold.com
+                                orders@radhekrupagoldcoin.com
                             </a>{" "}
                             to initiate the process. Once your request is approved and
                             the product is received and inspected, we will issue a
@@ -141,10 +141,10 @@ export default function RefundPolicyPage() {
                         <p>
                             Contact Us: If you have any questions or concerns about our refund policy or the buyback program, please don’t hesitate to contact us at {" "}
                             <a
-                                href="mailto:orders@radhekrupagold.com"
+                                href="mailto:orders@radhekrupagoldcoin.com"
                                 className={styles.email}
                             >
-                                orders@radhekrupagold.com
+                                orders@radhekrupagoldcoin.com
                             </a>{" "}
                         </p>
                     ),

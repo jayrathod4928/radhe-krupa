@@ -19,11 +19,11 @@ const HeadOffice = () => {
                     </a>
 
                     <a
-                        href="mailto:orders@radhekrupagold.com"
+                        href="mailto:orders@radhekrupagoldcoin.com"
                         className={styles.actionCard}
                     >
                         <FaEnvelope />
-                        <span>orders@radhekrupagold.com</span>
+                        <span>orders@radhekrupagoldcoin.com</span>
                     </a>
 
                     <a

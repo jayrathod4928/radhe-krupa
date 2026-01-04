@@ -70,10 +70,10 @@ export default function Header() {
 
                     <div className={styles.logo}>
                         <Link href="/">
-                            <Image src={Logo} alt="Radhe Krupa" width={60} height={60} />
+                            <Image src={Logo} alt="Radhe Krupa  " width={60} height={60} />
                         </Link>
                         <Link href="/">
-                            <span>Radhe Krupa</span>
+                            <span>Radhe Krupa Gold Coin</span>
                         </Link>
                     </div>
 

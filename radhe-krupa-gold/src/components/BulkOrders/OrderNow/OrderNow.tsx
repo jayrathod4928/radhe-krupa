@@ -10,7 +10,7 @@ import styles from "./OrderForm.module.scss";
 /* ================= MULTI-IMAGE UPLOAD ================= */
 const FormFileUpload = ({ value = [], onChange, error }: any) => {
     const [previews, setPreviews] = useState<string[]>([]);
-    const MAX_IMAGES = 5;
+    const MAX_IMAGES = 2;
 
     // Handle adding files
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -200,7 +200,7 @@ export default function OrderNowPage() {
         },
         {
             name: "customImages",
-            label: "Upload Your Designs (Max 5)",
+            label: "Upload Your Designs (Max 2)",
             xs: 12,
             renderer: FormFileUpload,
         },

@@ -75,10 +75,10 @@ export default function PrivacyPolicyPage() {
                             By using our website, you consent to the collection and use of your personal information as described in this Privacy Policy. If you have any questions or concerns about our privacy practices, please contact us
                             at {" "}
                             <a
-                                href="mailto:orders@radhekrupagold.com"
+                                href="mailto:orders@radhekrupagoldcoin.com"
                                 className={styles.email}
                             >
-                                orders@radhekrupagold.com
+                                orders@radhekrupagoldcoin.com
                             </a>{" "} .
                         </p>
                     ),

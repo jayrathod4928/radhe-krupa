@@ -73,7 +73,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
     },
     {
         id: "4",
-        title: "KALPAVRIKSHA",
+        title: "PEACOCK",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
         imageUrls: [maroonCard3, hoverImage],
         isCertificate: false,
@@ -90,7 +90,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
     },
     {
         id: "6",
-        title: "MAHAL",
+        title: "MECCA MADINA",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
         imageUrls: [maroonCard4, hoverImage],
         isCertificate: false,
@@ -114,7 +114,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
     },
     {
         id: "9",
-        title: "TREE",
+        title: "KALPAVRIKSHA",
         // This is the string shown BEFORE selection
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
         imageUrls: [maroonCard7, hoverImage],
@@ -123,7 +123,7 @@ export const MOCK_PRODUCTS: CoinProduct[] = [
     },
     {
         id: "10",
-        title: "JAGANNATH",
+        title: "TIRUPATI BALAJI",
         priceRange: "Rs. 830.00 - Rs. 14,950.00",
         imageUrls: [maroonCard9, hoverImage],
         isCertificate: false,
